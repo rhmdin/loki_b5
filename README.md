@@ -1,5 +1,5 @@
-# loki_b5
-PROJECT KELOMPOK 5 PWEB B
+# PROJECT KELOMPOK 5 PWEB B
+
 
 #Anggota Kelompok 5
 
