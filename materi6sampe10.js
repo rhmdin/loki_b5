@@ -22,6 +22,6 @@ materi6sampe10.get("/materi9", function(req,res){
     res.send("Tambah CPMK Kuliah")
 })
 
-materi6sampe10.get("/materi6", function(req,res){
+materi6sampe10.get("/materi10", function(req,res){
     res.send("Hapus CPMK Kuliah")
 })
