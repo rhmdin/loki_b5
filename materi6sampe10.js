@@ -1,6 +1,11 @@
 const express = require("express")
-const materi6sampai10 = express()
+const { appendFile } = require("fs")
+const materi6sampe10 = express()
 
-materi6sampai10.listen (3000,function(){
+materi6sampe10.listen (3000,function(){
     console.log("jalan gesss")
+})
+
+materi6sampe10.get("/", function(req,res){
+    res.send("welkam to papji mobail")
 })
