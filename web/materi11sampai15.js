@@ -2,7 +2,7 @@ const express = require('express');
 const materi11sampai15 = express();
 
 materi11sampai15.listen (3000,function(){
-    console.log("Server oke");
+    console.log("Server okey");
 });
 
 materi11sampai15.get("/materi11", function(req ,res) {
