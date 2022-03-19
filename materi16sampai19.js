@@ -6,6 +6,6 @@ materi16sampai19.listen (3000,function(){
     console.log("Komponen berhasil diubah yayay");
 })
 
-app.get("/test",(req,res) => {
+materi16sampai19.get("/test", function(req,res) {
     res.send("Haihaihaii!!")
 })
