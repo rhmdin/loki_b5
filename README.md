@@ -12,4 +12,4 @@
 
 ✅ Milestone Kelompok 5
 - 14-20 Maret 2022 (1st Week)
-  - - Testing respons routing per masing-masing fungsi
+  - Testing respons routing per masing-masing fungsi
