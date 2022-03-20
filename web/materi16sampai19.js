@@ -2,10 +2,12 @@ const express = require('express');
 const materi16sampai19 = express();
 
 materi16sampai19.get("/", (req, res) => {
-    res.send("Server berhasil terhubung yayay")
+    res.send("Server berhasil terhubung yayayy!!")
   })
 
 materi16sampai19.listen (3000)
+
+app.use(express.static('public'))
 
 materi16sampai19.get("/materi16", function(req,res) {
     res.send("Ubah komponen penilaian")
