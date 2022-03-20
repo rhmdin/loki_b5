@@ -38,7 +38,7 @@ materi11sampai15.delete("/deleteref", function(request ,response) {
 });
 
 materi11sampai15.get("/addkompnilai", function(request ,response) {
-    response.send("Pilihan : menambah komponen penilaian")
+    response.send("Pilihan : Menambah komponen penilaian")
 });
 
 materi11sampai15.post("/addkompnilai", function(request ,response) {
