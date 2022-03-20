@@ -10,7 +10,7 @@ materi11sampai15.get("/deletecpmk", function(req ,res) {
 });
 
 materi11sampai15.delete("/deletecpmk", function(req ,res) {
-    res.send("Berhasil enghapus CPMK Mata Kuliah")
+    res.send("Berhasil menghapus CPMK Mata Kuliah")
 });
 
 materi11sampai15.get("/addref", function(request ,response) {
