@@ -6,22 +6,22 @@ materi6sampe10.listen (3000,function(){
     console.log("jalan gesss")
 })
 
-materi6sampe10.get("/materi6", function(req,res){
+materi6sampe10.get("/tambahRPS", function(req,res){
     res.send("nambah RPS gais")
 })
 
-materi6sampe10.get("/materi7", function(req,res){
+materi6sampe10.get("/UbahRPS", function(req,res){
     res.send("mengubah RPS gais")
 })
 
-materi6sampe10.get("/materi8", function(req,res){
+materi6sampe10.get("/RevisiRPS", function(req,res){
     res.send("Revisi RPS ni gais")
 })
 
-materi6sampe10.get("/materi9", function(req,res){
+materi6sampe10.get("/TambahCPMK", function(req,res){
     res.send("Tambah CPMK Kuliah")
 })
 
-materi6sampe10.get("/materi10", function(req,res){
+materi6sampe10.get("/HapusCPMK", function(req,res){
     res.send("Hapus CPMK Kuliah")
 })
