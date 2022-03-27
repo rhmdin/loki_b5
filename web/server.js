@@ -117,32 +117,32 @@ server.put("/TambahCPMK", (req, res) => {
     console.log("\n\nBerhasil Menambah Data CPMK\n");
   });
 
-
 //Fungsi 10 Ubah CPMK
 server.get("/UbahCPMK", function(req,res){
     res.send("Ubah CPMK Kuliah")
 });
 
 //Fungsi 11 : Menghapus CMPK
-server.get("/HapusCPMK", (req, res) => {
+server.get("/hapuscpmk", (req, res) => {
   res.send('Berhasil Menghapus CPMK Mata Kuliah')
 });
 
-server.delete("/HapusCMPK", (req, res) => {
-  let hapuscpmk = {
-    "message": "Capaian Pembelajaran Mata Kuliah Sudah dihapuskan",
-    "Keterangan": "Menghapus CPMK mata kuliah",
-    "Nip ": "12345678912",
-    "Nama": "Vladimir Putim M,Kom.",
-    "Mata kuliah yang diampu": "Pemograman Web",
-    "Kode Mata kuliah": "SIJs2102",
-    "CPMK": [  "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic\n",
-            "2. Mahasiswa mampu menggunakan salah satu Bahasa pemrograman untuk membangun web localhost\n"],
-    "Cek": "PENGHAPUSAN DATA CPMK BERHASIL",
-    "code": ["OK",200]
-  };
-  res.json(hapuscpmk);
-  console.log("CPMK Berhasil Dihapus");
+server.delete("/hapuscpmk", (req, res) => {
+  console.log("Menghapus CPMK");
+  let ubahref = {
+    "message": "CPMK dihapus oleh Dosen",
+    "nip ": 198201182008121002,
+    "Nama": "Husnil Kamil M.T",
+    "mata kuliah" : "Pemograman Web",
+    "kode" : "JSI62125",
+    "sks" : 3,
+    "semester" : 4,
+    "cpmk" : ["Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)"],
+    "keterangan": "Berhasil",
+    "status": 0   
+    }
+  res.json(ubahref);
+  console.log("CPMK berhasil dihapus");
 });
 
 //Fungsi 12 : Menambah referensi
