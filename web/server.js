@@ -278,10 +278,12 @@ server.get("/search", function(req,res){
   res.send("Data RPS yang dicari berhasil ditampilkan")
 })
 
+//Fungsi 22 : menampilkan detail RPS
 server.get("/detail", function(req,res){
   res.send("Detail RPS")
 })
 
+//Fungsi 23 : Ekspor RPS menjadi PDF
 server.get("/generate-pdf", function(req,res){
   res.send("Generate PDF Berhasil")
 })
