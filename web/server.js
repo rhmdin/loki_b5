@@ -255,3 +255,18 @@ server.post("/tambahkompnilai", (req, res) => {
   res.json(tambahkompnilai);
   console.log("Komponen Penilaian berhasil ditambah");
 });
+
+//Rzki Juni Darmawan
+//Fungsi 21 : melakukan pencarian berdasarkan nama mata kuliah atau kode matakuliah
+server.get("/search", function(req,res){
+  res.send("Data RPS yang dicari berhasil ditampilkan")
+})
+
+server.get("/detail", function(req,res){
+  res.send("Detail RPS")
+})
+
+server.get("/generate-pdf", function(req,res){
+  res.send("Generate Berhasil")
+})
+
