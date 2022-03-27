@@ -72,8 +72,6 @@ server.post("/UbahRPS", (req, res) => {
     console.log("RPS berhasil diubah");
   });
 
-
-
 //Fungsi 8 Revisi RPS
 server.get("/RevisiRPS", function(req,res){
     res.send("Revisi RPS ni gais")
@@ -120,35 +118,121 @@ server.put("/TambahCPMK", (req, res) => {
   });
 
 
-//Fungsi 10 Hapus CPMK
-server.get("/HapusCPMK", function(req,res){
-    res.send("Hapus CPMK Kuliah")
+//Fungsi 10 Ubah CPMK
+server.get("/UbahCPMK", function(req,res){
+    res.send("Ubah CPMK Kuliah")
+});
 
 //Fungsi 11 : Menghapus CMPK
-server.delete("/cpmk/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus CPMK Mata Kuliah id: ${ID}')
+server.get("/HapusCPMK", (req, res) => {
+  res.send('Berhasil Menghapus CPMK Mata Kuliah')
+});
+
+server.delete("/HapusCMPK", (req, res) => {
+  let hapuscpmk = {
+    "message": "Capaian Pembelajaran Mata Kuliah Sudah dihapuskan",
+    "Keterangan": "Menghapus CPMK mata kuliah",
+    "Nip ": "12345678912",
+    "Nama": "Vladimir Putim M,Kom.",
+    "Mata kuliah yang diampu": "Pemograman Web",
+    "Kode Mata kuliah": "SIJs2102",
+    "CPMK": [  "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic\n",
+            "2. Mahasiswa mampu menggunakan salah satu Bahasa pemrograman untuk membangun web localhost\n"],
+    "Cek": "PENGHAPUSAN DATA CPMK BERHASIL",
+    "code": ["OK",200]
+  };
+  res.json(hapuscpmk);
+  console.log("CPMK Berhasil Dihapus");
 });
 
 //Fungsi 12 : Menambah referensi
-server.post("/referensi/", function(req ,res){
-    res.send("Berhasil menambah referensi")
+server.get("/tambahref", function(req ,res){
+  res.send("Berhasil menambah referensi")
+});
+
+server.post("/tambahref", (req, res) => {
+  console.log("Menambah Referensi");
+  let tambahref = {
+      "message": "Referensi ditambahkan oleh Dosen",
+      "nip ": 198201182008121002,
+      "Nama": "Husnil Kamil M.T",
+      "mata kuliah" : "Pemograman Web",
+      "kode" : "JSI62125",
+      "sks" : 3,
+      "semester" : 4,
+      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
+      "keterangan": "Berhasil",
+      "status": 0
+    }
+  res.json(tambahref);
+  console.log("Referensi berhasil ditambah");
 });
 
 //Fungsi 13 : Mengubah referensi
-server.put("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil mengubah referensi id: ${ID}')
+server.get("/ubahref", function(req ,res) {
+  res.send('Berhasil mengubah referensi')
+});
+
+server.put("/ubahref", (req, res) => {
+  console.log("Mengubah Referensi");
+  let ubahref = {
+      "message": "Referensi diubah oleh Dosen",
+      "nip ": 198201182008121002,
+      "Nama": "Husnil Kamil M.T",
+      "mata kuliah" : "Pemograman Web",
+      "kode" : "JSI62125",
+      "sks" : 3,
+      "semester" : 4,
+      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
+      "keterangan": "Berhasil",
+      "status": 0
+    }
+  res.json(ubahref);
+  console.log("Referensi berhasil diubah");
 });
 
 //Fungsi 14 : Menghapus referensi
-server.delete("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus referensi id: ${ID}')
+server.get("/hapusref", function(req ,res) {
+  res.send('Berhasil menghapus referensi')
+});
+
+server.delete("/hapusref", (req, res) => {
+  console.log("Menghapus Referensi");
+  let hapusref = {
+      "message": "Referensi dihapus oleh Dosen",
+      "nip ": 198201182008121002,
+      "Nama": "Husnil Kamil M.T",
+      "mata kuliah" : "Pemograman Web",
+      "kode" : "JSI62125",
+      "sks" : 3,
+      "semester" : 4,
+      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
+      "keterangan": "Berhasil",
+      "status": 0
+    }
+  res.json(hapusref);
+  console.log("Referensi berhasil dihapus");
 });
 
 //Fungsi 15 : Menambah komponen penilaian
-server.post("/kompnilai/", function(req ,res) {
-    res.send("Berhasil menambah komponen penilaian")
+server.get("/tambahkompnilai", function(req ,res) {
+  res.send("Berhasil menambah komponen penilaian")
 });
+
+server.post("/tambahkompnilai", (req, res) => {
+  console.log("Menambah Komponen Penilaian");
+  let tambahkompnilai = {
+    "message": "Komponen penilaian ditambahkan oleh Dosen",
+    "nip ": 198201182008121002,
+    "nama": "Husnil Kamil M.T",
+    "mata kuliah" : "Pemograman Web",
+    "kode" : "JSI62125",
+    "sks" : 3,
+    "semester" : 4,
+    "komponen penilaian" : ["Project", "Tugas", "Quiz", "UTS", "UAS"],
+    "keterangan": "Berhasil",
+    "status": 0
+    }
+  res.json(tambahkompnilai);
+  console.log("Komponen Penilaian berhasil ditambah");
 });
