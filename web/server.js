@@ -37,6 +37,7 @@ server.get("/tambahRPS", function(req,res){
 })
 
 server.post("/tambahRPS", (req, res) => {
+    console.log("Tambah");
     let tambah = {
       message: "Silahkan tambahkan RPS disini",
       "Mata Kuliah :": {
@@ -57,6 +58,7 @@ server.get("/UbahRPS", function(req,res){
 
 //route mengubah RPS yang sudah ada (Materi 7 = Dean Fisabil Andwi)
 server.post("/UbahRPS", (req, res) => {
+    console.log("Ubah RPS");
     let Ubah = {
       message: "Silahkan Ubah RPS disini",
       "Mata Kuliah :": {
@@ -79,6 +81,7 @@ server.get("/RevisiRPS", function(req,res){
 
 //route revisi RPS yang sudah ada (Materi 8 = Dean Fisabil Andwi)
 server.post("/RevisiRPS", (req, res) => {
+    console.log("Revisi RPS");
     let revisi = {
       message: "Silahkan revisi RPS disini",
       "Mata Kuliah :": {
@@ -97,6 +100,25 @@ server.post("/RevisiRPS", (req, res) => {
 server.get("/TambahCPMK", function(req,res){
     res.send("Tambah CPMK Kuliah")
 })
+
+server.put("/TambahCPMK", (req, res) => {
+    console.log("Tambah Data CPMK");
+    let obj = {
+        "message": "Capaian Pembelajaran Mata Kuliah Sudah ditambahkan",
+        "Keterangan": "menambah CPMK mata kuliah",
+        "Nip ": "12345678912",
+        "Nama": "Vladimir Putim M,Kom.",
+        "Matkuliah yang diampu": "Pemograman Web",
+        "Kode Matakuliah": "SIJs2102",
+        "CPMK": [   "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic\n",
+                    "2. Mahasiswa mampu menggunakan salah satu Bahasa pemrograman untuk membangun web localhost\n"],
+        "Cek": "PENAMBAHAN DATA CPMK BERHASIL",
+        "code": ["OK",200]
+    }
+    res.json(obj);
+    console.log("\n\nBerhasil Menambah Data CPMK\n");
+  });
+
 
 //Fungsi 10 Hapus CPMK
 server.get("/HapusCPMK", function(req,res){
