@@ -267,6 +267,6 @@ server.get("/detail", function(req,res){
 })
 
 server.get("/generate-pdf", function(req,res){
-  res.send("Generate Berhasil")
+  res.send("Generate PDF Berhasil")
 })
 
