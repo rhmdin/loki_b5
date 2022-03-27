@@ -72,6 +72,7 @@ server.post("/UbahRPS", (req, res) => {
     console.log("RPS berhasil diubah");
   });
 
+
 //Fungsi 8 Revisi RPS
 server.get("/RevisiRPS", function(req,res){
     res.send("Revisi RPS ni gais")
@@ -111,128 +112,57 @@ server.put("/TambahCPMK", (req, res) => {
         "CPMK": [   "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic\n",
                     "2. Mahasiswa mampu menggunakan salah satu Bahasa pemrograman untuk membangun web localhost\n"],
         "Cek": "PENAMBAHAN DATA CPMK BERHASIL",
-        "code": ["OK",200]
     }
     res.json(obj);
     console.log("\n\nBerhasil Menambah Data CPMK\n");
   });
 
-//Fungsi 10 Ubah CPMK
+
+//Fungsi Mengubah CPMK
 server.get("/UbahCPMK", function(req,res){
-    res.send("Ubah CPMK Kuliah")
-});
+    res.send("Mengubah CPMK Kuliah")
+    server.post("/TambahCPMK", (req, res) => {
+      console.log("Mengubah Data CPMK");
+      let obj = {
+          "message": "Capaian Pembelajaran Mata Kuliah Sudah diubah",
+          "Keterangan": "mengubah CPMK mata kuliah",
+          "Nip ": "12345678912",
+          "Nama": "Vladimir Putim M,Kom.",
+          "Matkuliah yang diampu": "Pemograman Web",
+          "Kode Matakuliah": "SIJs2102",
+          "CPMK": [   "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic dan juga advance\n",
+                      "2. Mahasiswa mampu menggunakan Bahasa pemrograman Javascript untuk membangun web localhost\n"],
+          "Cek": "Pengubahan DATA CPMK BERHASIL",
+      }
+      res.json(obj);
+      console.log("\n\nBerhasil Mengubah Data CPMK\n");
+    });
 
 //Fungsi 11 : Menghapus CMPK
-server.get("/hapuscpmk", (req, res) => {
-  res.send('Berhasil Menghapus CPMK Mata Kuliah')
-});
-
-server.delete("/hapuscpmk", (req, res) => {
-  console.log("Menghapus CPMK");
-  let ubahref = {
-    "message": "CPMK dihapus oleh Dosen",
-    "nip ": 198201182008121002,
-    "Nama": "Husnil Kamil M.T",
-    "mata kuliah" : "Pemograman Web",
-    "kode" : "JSI62125",
-    "sks" : 3,
-    "semester" : 4,
-    "cpmk" : ["Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)"],
-    "keterangan": "Berhasil",
-    "status": 0   
-    }
-  res.json(ubahref);
-  console.log("CPMK berhasil dihapus");
+server.delete("/cpmk/:id", function(req ,res) {
+    const ID = request.params.id;
+    res.send('Berhasil menghapus CPMK Mata Kuliah id: ${ID}')
 });
 
 //Fungsi 12 : Menambah referensi
-server.get("/tambahref", function(req ,res){
-  res.send("Berhasil menambah referensi")
-});
-
-server.post("/tambahref", (req, res) => {
-  console.log("Menambah Referensi");
-  let tambahref = {
-      "message": "Referensi ditambahkan oleh Dosen",
-      "nip ": 198201182008121002,
-      "Nama": "Husnil Kamil M.T",
-      "mata kuliah" : "Pemograman Web",
-      "kode" : "JSI62125",
-      "sks" : 3,
-      "semester" : 4,
-      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
-    }
-  res.json(tambahref);
-  console.log("Referensi berhasil ditambah");
+server.post("/referensi/", function(req ,res){
+    res.send("Berhasil menambah referensi")
 });
 
 //Fungsi 13 : Mengubah referensi
-server.get("/ubahref", function(req ,res) {
-  res.send('Berhasil mengubah referensi')
-});
-
-server.put("/ubahref", (req, res) => {
-  console.log("Mengubah Referensi");
-  let ubahref = {
-      "message": "Referensi diubah oleh Dosen",
-      "nip ": 198201182008121002,
-      "Nama": "Husnil Kamil M.T",
-      "mata kuliah" : "Pemograman Web",
-      "kode" : "JSI62125",
-      "sks" : 3,
-      "semester" : 4,
-      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
-    }
-  res.json(ubahref);
-  console.log("Referensi berhasil diubah");
+server.put("/referensi/:id", function(req ,res) {
+    const ID = request.params.id;
+    res.send('Berhasil mengubah referensi id: ${ID}')
 });
 
 //Fungsi 14 : Menghapus referensi
-server.get("/hapusref", function(req ,res) {
-  res.send('Berhasil menghapus referensi')
-});
-
-server.delete("/hapusref", (req, res) => {
-  console.log("Menghapus Referensi");
-  let hapusref = {
-      "message": "Referensi dihapus oleh Dosen",
-      "nip ": 198201182008121002,
-      "Nama": "Husnil Kamil M.T",
-      "mata kuliah" : "Pemograman Web",
-      "kode" : "JSI62125",
-      "sks" : 3,
-      "semester" : 4,
-      "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
-    }
-  res.json(hapusref);
-  console.log("Referensi berhasil dihapus");
+server.delete("/referensi/:id", function(req ,res) {
+    const ID = request.params.id;
+    res.send('Berhasil menghapus referensi id: ${ID}')
 });
 
 //Fungsi 15 : Menambah komponen penilaian
-server.get("/tambahkompnilai", function(req ,res) {
-  res.send("Berhasil menambah komponen penilaian")
+server.post("/kompnilai/", function(req ,res) {
+    res.send("Berhasil menambah komponen penilaian")
 });
-
-server.post("/tambahkompnilai", (req, res) => {
-  console.log("Menambah Komponen Penilaian");
-  let tambahkompnilai = {
-    "message": "Komponen penilaian ditambahkan oleh Dosen",
-    "nip ": 198201182008121002,
-    "nama": "Husnil Kamil M.T",
-    "mata kuliah" : "Pemograman Web",
-    "kode" : "JSI62125",
-    "sks" : 3,
-    "semester" : 4,
-    "komponen penilaian" : ["Project", "Tugas", "Quiz", "UTS", "UAS"],
-    "keterangan": "Berhasil",
-    "status": 0
-    }
-  res.json(tambahkompnilai);
-  console.log("Komponen Penilaian berhasil ditambah");
 });
