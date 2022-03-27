@@ -163,7 +163,7 @@ server.delete("/HapusCPMK", (req, res) => {
   console.log("CPMK berhasil dihapus");
 });
 
-//Fungsi 12 : Menambah referensi
+//Fungsi 12 : Menambah Referensi
 server.get("/tambahref", function(req ,res){
   res.send("Berhasil menambah referensi")
 });
@@ -186,7 +186,7 @@ server.post("/tambahref", (req, res) => {
   console.log("Referensi berhasil ditambah");
 });
 
-//Fungsi 13 : Mengubah referensi
+//Fungsi 13 : Mengubah Referensi
 server.get("/ubahref", function(req ,res) {
   res.send('Berhasil mengubah referensi')
 });
@@ -209,7 +209,7 @@ server.put("/ubahref", (req, res) => {
   console.log("Referensi berhasil diubah");
 });
 
-//Fungsi 14 : Menghapus referensi
+//Fungsi 14 : Menghapus Referensi
 server.get("/hapusref", function(req ,res) {
   res.send('Berhasil menghapus referensi')
 });
@@ -232,7 +232,7 @@ server.delete("/hapusref", (req, res) => {
   console.log("Referensi berhasil dihapus");
 });
 
-//Fungsi 15 : Menambah komponen penilaian
+//Fungsi 15 : Menambah Komponen Penilaian
 server.get("/tambahkompnilai", function(req ,res) {
   res.send("Berhasil menambah komponen penilaian")
 });
