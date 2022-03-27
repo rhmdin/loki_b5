@@ -30,6 +30,31 @@ server.get("/printrps", function(req,res) {
     res.send("Cetak RPS")
 })
 
+//Dean Fisabil Andwi
+//Fungsi 6 Menambah RPS
+server.get("/tambahRPS", function(req,res){
+    res.send("nambah RPS gais")
+})
+
+//Fungsi 7 Mengubah RPS
+server.get("/UbahRPS", function(req,res){
+    res.send("mengubah RPS gais")
+})
+
+//Fungsi 8 Revisi RPS
+server.get("/RevisiRPS", function(req,res){
+    res.send("Revisi RPS ni gais")
+})
+
+//Fungsi 9 Tambah CPMK Kuliah
+server.get("/TambahCPMK", function(req,res){
+    res.send("Tambah CPMK Kuliah")
+})
+
+//Fungsi 10 Hapus CPMK
+server.get("/HapusCPMK", function(req,res){
+    res.send("Hapus CPMK Kuliah")
+
 //Fungsi 11 : Menghapus CMPK
 server.delete("/cpmk/:id", function(req ,res) {
     const ID = request.params.id;
@@ -57,4 +82,4 @@ server.delete("/referensi/:id", function(req ,res) {
 server.post("/kompnilai/", function(req ,res) {
     res.send("Berhasil menambah komponen penilaian")
 });
-
+});
