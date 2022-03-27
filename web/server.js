@@ -140,7 +140,7 @@ server.put("/UbahCPMK", (req, res) => {
       console.log("\n\nBerhasil Mengubah Data CPMK\n");
 });
 
-//Reysha Irsyalina 2011521006
+//Reysha Irsyalina
 //Fungsi 11 : Menghapus CMPK
 server.get("/HapusCPMK", (req, res) => {
   res.send('Berhasil Menghapus CPMK Mata Kuliah')
