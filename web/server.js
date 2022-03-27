@@ -37,7 +37,7 @@ server.get("/tambahRPS", function(req,res){
 })
 
 server.post("/tambahRPS", (req, res) => {
-    let add = {
+    let tambah = {
       message: "Silahkan tambahkan RPS disini",
       "Mata Kuliah :": {
         "kode matkul": "JSI62125",
@@ -46,7 +46,7 @@ server.post("/tambahRPS", (req, res) => {
         semester: "4",
       },
     };
-    res.json(add);
+    res.json(tambah);
     console.log("RPS berhasil ditambahkan");
   });
 
@@ -57,7 +57,7 @@ server.get("/UbahRPS", function(req,res){
 
 //route mengubah RPS yang sudah ada (Materi 7 = Dean Fisabil Andwi)
 server.post("/UbahRPS", (req, res) => {
-    let add = {
+    let Ubah = {
       message: "Silahkan Ubah RPS disini",
       "Mata Kuliah :": {
         "kode matkul": "JSI62126",
@@ -66,7 +66,7 @@ server.post("/UbahRPS", (req, res) => {
         semester: "4",
       },
     };
-    res.json(add);
+    res.json(Ubah);
     console.log("RPS berhasil diubah");
   });
 
@@ -79,7 +79,7 @@ server.get("/RevisiRPS", function(req,res){
 
 //route revisi RPS yang sudah ada (Materi 8 = Dean Fisabil Andwi)
 server.post("/RevisiRPS", (req, res) => {
-    let add = {
+    let revisi = {
       message: "Silahkan revisi RPS disini",
       "Mata Kuliah :": {
         "kode matkul": "JSI62126",
@@ -88,7 +88,7 @@ server.post("/RevisiRPS", (req, res) => {
         semester: "5",
       },
     };
-    res.json(add);
+    res.json(revisi);
     console.log("RPS berhasil direvisi");
   });
 
