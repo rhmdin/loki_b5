@@ -257,15 +257,33 @@ server.post("/tambahkompnilai", (req, res) => {
 });
 
 //Rzki Juni Darmawan
+//Fungsi 20 : menghapus pertemuan mingguan yang ada dalam RPS
+server.get('/RPS/hapus-pertemuan', function(request, response){
+	response.send('Ini adalah halaman Dosen menghapus pertemuan mingguan yang ada dalam RPS')
+})
+// hapus_pertemuan
+server.delete("/RPS/hapus_pertemuan", (req, res) => {
+  let pertemuan = {
+     "message": "Silahkan masukkan pertemuan yang akan dihapus",
+      "kode matkul": " ",
+      "Jadwal": "",
+      "keterangan": "berhasil di hapus",
+      "status":1
+    }
+    res.json(pertemuan);
+  });
+
 //Fungsi 21 : melakukan pencarian berdasarkan nama mata kuliah atau kode matakuliah
 server.get("/search", function(req,res){
   res.send("Data RPS yang dicari berhasil ditampilkan")
 })
 
+//Fungsi 22 : menampilkan detail RPS
 server.get("/detail", function(req,res){
   res.send("Detail RPS")
 })
 
+//Fungsi 23 : Ekspor RPS menjadi PDF
 server.get("/generate-pdf", function(req,res){
   res.send("Generate PDF Berhasil")
 })
