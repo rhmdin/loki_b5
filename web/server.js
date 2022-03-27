@@ -56,7 +56,7 @@ server.get("/UbahRPS", function(req,res){
 })
 
 //route mengubah RPS yang sudah ada (Materi 7 = Dean Fisabil Andwi)
-router.post("/UbahRPS", (req, res) => {
+server.post("/UbahRPS", (req, res) => {
     let add = {
       message: "Silahkan tambahkan RPS disini",
       "Mata Kuliah :": {
@@ -78,7 +78,7 @@ server.get("/RevisiRPS", function(req,res){
 })
 
 //route revisi RPS yang sudah ada (Materi 8 = Dean Fisabil Andwi)
-router.post("/RevisiRPS", (req, res) => {
+server.post("/RevisiRPS", (req, res) => {
     let add = {
       message: "Silahkan revisi RPS disini",
       "Mata Kuliah :": {
