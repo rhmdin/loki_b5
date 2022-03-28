@@ -58,22 +58,21 @@ server.put("/rpsdetail", (req,res) => {
 });
 
 //fungsi4
-server.get("/rpslist", function(req,res) {
-    let rpsList = {
-    "Daftar_RPS" : [{
+server.get("/rpsreport", function(req,res) {
+    let rpsReport = {
+    "RPS" : [{
         "Kode_Matkul" : "jsi123",
-        "Matkul" : "Pemograman Web",
-        "SKS" : 4,
-        "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
+        "Metode" : "PBL",
+        "Jumlah Revisi" : "3 kali",
     }, {
-        "Kode_Matkul" : "jsi345",
-        "Matkul" : "Pemograman Mobile",
-        "SKS" : 4,
-        "Dosen" : ["Husnil Kamil"]
-    }]
-};     
-    const list = JSON.parse(JSON.stringify(rpsList)); 
-    res.send(res.json(list));
+        "Kode_Matkul" : "jsi456",
+        "Metode" : "CBL",
+        "Jumlah Revisi" : "1 kali",
+    }],
+    "Persentase" : {"PBL" : "30%", "CBL" : "50%"}
+    };     
+    const report = JSON.parse(JSON.stringify(rpsReport)); 
+    res.send(res.json(report));
     console.log("\n\nDaftar RPS");
 });
 
