@@ -118,7 +118,7 @@ server.post("/TambahCPMK", (req, res) => {
   });
 
 
-//Fungsi Mengubah CPMK
+//Fungsi 10 Mengubah CPMK
 server.get("/UbahCPMK", function(req,res){
     res.send("Mengubah CPMK Kuliah")
 });
@@ -297,11 +297,11 @@ server.delete("/delkompnilai", (req, res) => {
 });
 
 //Fungsi 18 : Menambah pertemuan mingguan yang ada dalam RPS
-server.get("/addpertemuan", function(req,res){
+server.get("/RPS/addpertemuan", function(req,res){
   res.send("Menambah pertemuan mingguan")
 })
 
-server.post("/RPS//addpertemuan", (req, res) => {
+server.post("/RPS/addpertemuan", (req, res) => {
   let addpert = {
     "message": "Silahkan masukkan pertemuan yang ingin ditambah",
     "kode matkul": " ",
@@ -318,7 +318,7 @@ server.get("/RPS/ubahPertemuan", function(req,res){
   res.send("Mengubah pertemuan mingguan")
 })
 
-server.put("/ubahPertemuan", (req, res) => {
+server.put("/RPS/ubahPertemuan", (req, res) => {
   let ubahpert = {
     "message": "Silahkan masukkan pertemuan yang akan diubah",
     "kode matkul": " ",
@@ -330,9 +330,9 @@ server.put("/ubahPertemuan", (req, res) => {
   console.log("Pertemuan mingguan berhasil diubah");
   });
 
-//Rzki Juni Darmawan
+//Rizki Juni Darmawan
 //Fungsi 20 : menghapus pertemuan mingguan yang ada dalam RPS
-server.get('/RPS/hapus-pertemuan', function(request, response){
+server.get('/RPS/hapus_pertemuan', function(request, response){
 	response.send('Ini adalah halaman Dosen menghapus pertemuan mingguan yang ada dalam RPS')
 })
 // hapus_pertemuan
