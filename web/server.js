@@ -10,51 +10,72 @@ server.listen (3000,function(){
 })
 
 //Fungsi 1
-server.get("/login/:usn", function(req,res) {
+server.post("/login/:usn", function(req,res) {
     res.status("200");
-    const USN = req.params.usn;
+    console.log("\n\nBerhasil Log In");
     const logIn = {
         "Akun" :  {
+            "NIP" : req.params.usn,
             "Username" : "HusnilK",
             "Jabatan" : "Kajur SI",
         },
     };
     const akun = JSON.parse(JSON.stringify(logIn));
     
-    res.send(res.json(akun)+ USN);
-    console.log("\n\nBerhasil Log In");
+    res.send(res.json(akun));
 });
 
 //fungsi2
-server.get("/logout/:usn", function(req,res) {
+server.post("/logout/:usn", function(req,res) {
     res.status("200");
-    const USN = req.params.usn;
+    console.log("\n\nBerhasil Log Out");
     const logIn = {
         "Akun" :  {
+            "NIP" : req.params.usn,
             "Username" : "HusnilK",
             "Jabatan" : "Kajur SI",
         },
     };
     const akun = JSON.parse(JSON.stringify(logIn));
     
-    res.send(res.json(akun)+ USN);
-    console.log("\n\nBerhasil Log Out");
+    res.send(res.json(akun));
 });
 
-//fungsi3
-server.get("/userlist", function(req,res) {
-    res.send("Daftar Pengguna");
+//fungsi3 mengubah daftar dosen yang bisa mengubah rps
+server.put("/rpslist/rpsdetail:idrps", (req,res) => {
+    res.status("200");
+    let detailRps = {
+        "Detail_RPS" : {
+            "Kode_Matkul" : req.params.idrps,
+            "Matkul" : "Pemograman Web",
+            "SKS" : 4,
+            "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
+        },
+    }; 
+    const detail = JSON.parse(JSON.stringify(detailRps));
+    
+    res.send(res.json(detail));
+    console.log("\n\nDetail RPS");
 });
 
 //fungsi4
 server.get("/rpslist", function(req,res) {
-    res.send("Daftar RPS");
+    let rpsList = {
+    "Detail_RPS" : {
+        "Kode_Matkul" : req.params.idrps,
+        "Matkul" : "Pemograman Web",
+        "SKS" : 4,
+        "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
+    },
+}; 
+    res.send("Daftar RPS dengan id" + req.params.idrps);
 });
 
 //fungsi5
-server.get("/printrps", function(req,res) {
-    res.send("Cetak RPS");
+server.get("/printrps:idrps", function(req,res) {
+    res.send("Cetak RPS"+req.params.idrps+" Berhasil");
 });
+
 
 //Fungsi 11 : Menghapus CMPK
 server.delete("/cpmk/:id", function(req ,res) {
