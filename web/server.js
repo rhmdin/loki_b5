@@ -256,6 +256,85 @@ server.post("/tambahkompnilai", (req, res) => {
   console.log("Komponen Penilaian berhasil ditambah");
 });
 
+//Pawal Atakosi
+//Fungsi 16 : Mengubah komponen penilalian
+server.get("/ubahkompnilai", function(req,res){
+  res.send("Mengubah komponen penilaian")
+})
+
+server.put("/ubahkompnilai", (req, res) => {
+  let ubahkomp = {
+    "message": "Silahkan ubah komponen penilaian disini",
+    "nip ": 198201182008121002,
+    "nama": "Husnil Kamil M.T",
+    "mata kuliah" : "Pemograman Web",
+    "kode" : "JSI62125",
+    "sks" : 3,
+    "semester" : 4,
+    "komponen penilaian" : ["Project", "Tugas", "Quiz", "UTS", "UAS"],
+    "keterangan": "Berhasil",
+    "status": 1
+  };
+  res.json(ubahkomp);
+  console.log("Komponen penilaian berhasil diubah");
+});
+
+//Fungsi 17 : Menghapus komponen penilaian
+server.get("/delkompnilai", function(req,res){
+  res.send("Menghapus komponen penilaian")
+})
+
+server.delete("/delkompnilai", (req, res) => {
+  let delkomp = {
+    "message": "Silahkan hapus komponen penilaian disini",
+    "nip ": 198201182008121002,
+    "nama": "Husnil Kamil M.T",
+    "mata kuliah" : "Pemograman Web",
+    "kode" : "JSI62125",
+    "sks" : 3,
+    "semester" : 4,
+    "komponen penilaian" : ["Project", "Tugas", "Quiz", "UAS"],
+    "keterangan": "Berhasil",
+    "status": 1
+  };
+  res.json(delkomp);
+  console.log("Komponen penilaian berhasil dihapus");
+});
+
+//Fungsi 18 : Menambah pertemuan mingguan yang ada dalam RPS
+server.get("/addpertemuan", function(req,res){
+  res.send("Menambah pertemuan mingguan")
+})
+
+server.post("/RPS//addpertemuan", (req, res) => {
+  let addpert = {
+    "message": "Silahkan masukkan pertemuan yang ingin ditambah",
+    "kode matkul": " ",
+    "Jadwal": "",
+    "keterangan": "berhasil",
+    "status":1
+  };
+  res.json(addpert);
+  console.log("Pertemuan mingguan berhasil ditambah");
+  });
+
+//Fungsi 19 : Mengubah pertemuan mingguan yang ada dalam RPS
+server.get("/RPS/ubahPertemuan", function(req,res){
+  res.send("Mengubah pertemuan mingguan")
+})
+
+server.put("/ubahPertemuan", (req, res) => {
+  let ubahpert = {
+    "message": "Silahkan masukkan pertemuan yang akan diubah",
+    "kode matkul": " ",
+    "Jadwal": "",
+    "keterangan": "berhasil",
+    "status":1
+  };
+  res.json(ubahpert);
+  console.log("Pertemuan mingguan berhasil diubah");
+  });
+
 //Rzki Juni Darmawan
 //Fungsi 20 : menghapus pertemuan mingguan yang ada dalam RPS
 server.get('/RPS/hapus-pertemuan', function(request, response){
@@ -264,11 +343,11 @@ server.get('/RPS/hapus-pertemuan', function(request, response){
 // hapus_pertemuan
 server.delete("/RPS/hapus_pertemuan", (req, res) => {
   let pertemuan = {
-     "message": "Silahkan masukkan pertemuan yang akan dihapus",
-      "kode matkul": " ",
-      "Jadwal": "",
-      "keterangan": "berhasil di hapus",
-      "status":1
+    "message": "Silahkan masukkan pertemuan yang akan dihapus",
+    "kode matkul": " ",
+    "Jadwal": "",
+    "keterangan": "berhasil di hapus",
+    "status":1
     }
     res.json(pertemuan);
   });
