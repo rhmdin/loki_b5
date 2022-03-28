@@ -57,56 +57,26 @@ server.put("/rpsdetail", (req,res) => {
 });
 
 //fungsi4
-server.get("/rpslist", function(req,res) {
-    let rpsList = {
-    "Daftar_RPS" : [{
+server.get("/rpsreport", function(req,res) {
+    let rpsReport = {
+    "RPS" : [{
         "Kode_Matkul" : "jsi123",
-        "Matkul" : "Pemograman Web",
-        "SKS" : 4,
-        "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
+        "Metode" : "PBL",
+        "Jumlah Revisi" : "3 kali",
     }, {
-        "Kode_Matkul" : "jsi345",
-        "Matkul" : "Pemograman Mobile",
-        "SKS" : 4,
-        "Dosen" : ["Husnil Kamil"]
-    }]
-};     
-    const list = JSON.parse(JSON.stringify(rpsList)); 
-    res.send(res.json(list));
+        "Kode_Matkul" : "jsi456",
+        "Metode" : "CBL",
+        "Jumlah Revisi" : "1 kali",
+    }],
+    "Persentase" : {"PBL" : "30%", "CBL" : "50%"}
+    };     
+    const report = JSON.parse(JSON.stringify(rpsReport)); 
+    res.send(res.json(report));
     console.log("\n\nDaftar RPS");
 });
 
 //fungsi5
 server.get("/printrps:idrps", function(req,res) {
     res.send("Cetak RPS"+req.params.idrps+" Berhasil");
-});
-
-
-//Fungsi 11 : Menghapus CMPK
-server.delete("/cpmk/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus CPMK Mata Kuliah id: ${ID}')
-});
-
-//Fungsi 12 : Menambah referensi
-server.post("/referensi/", function(req ,res){
-    res.send("Berhasil menambah referensi")
-});
-
-//Fungsi 13 : Mengubah referensi
-server.put("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil mengubah referensi id: ${ID}')
-});
-
-//Fungsi 14 : Menghapus referensi
-server.delete("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus referensi id: ${ID}')
-});
-
-//Fungsi 15 : Menambah komponen penilaian
-server.post("/kompnilai/", function(req ,res) {
-    res.send("Berhasil menambah komponen penilaian")
 });
 
