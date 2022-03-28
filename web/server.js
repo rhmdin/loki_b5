@@ -157,8 +157,7 @@ server.delete("/HapusCPMK", (req, res) => {
     "sks" : 3,
     "semester" : 4,
     "cpmk" : ["Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)"],
-    "keterangan": "Berhasil",
-    "status": 0   
+    "keterangan": "Berhasil"
     }
   res.json(hapuscpmk);
   console.log("CPMK berhasil dihapus");
@@ -180,8 +179,7 @@ server.post("/tambahref", (req, res) => {
       "sks" : 3,
       "semester" : 4,
       "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
+      "keterangan": "Berhasil"
     }
   res.json(tambahref);
   console.log("Referensi berhasil ditambah");
@@ -203,8 +201,7 @@ server.put("/ubahref", (req, res) => {
       "sks" : 3,
       "semester" : 4,
       "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
+      "keterangan": "Berhasil"
     }
   res.json(ubahref);
   console.log("Referensi berhasil diubah");
@@ -226,8 +223,7 @@ server.delete("/hapusref", (req, res) => {
       "sks" : 3,
       "semester" : 4,
       "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-      "keterangan": "Berhasil",
-      "status": 0
+      "keterangan": "Berhasil"
     }
   res.json(hapusref);
   console.log("Referensi berhasil dihapus");
@@ -249,8 +245,7 @@ server.post("/tambahkompnilai", (req, res) => {
     "sks" : 3,
     "semester" : 4,
     "komponen penilaian" : ["Project", "Tugas", "Quiz", "UTS", "UAS"],
-    "keterangan": "Berhasil",
-    "status": 0
+    "keterangan": "Berhasil"
     }
   res.json(tambahkompnilai);
   console.log("Komponen Penilaian berhasil ditambah");
