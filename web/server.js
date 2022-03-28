@@ -11,6 +11,9 @@ server.listen (3000,function(){
 
 //Rdina 2012
 //Fungsi 1 login
+server.get("/login", function(req,res){
+  res.send("Halaman log in")
+})
 server.post("/login/:usn", function(req,res) {
     res.status("200");
     console.log("\n\nBerhasil Log In");
@@ -27,6 +30,9 @@ server.post("/login/:usn", function(req,res) {
 });
 
 //fungsi2 logout
+server.get("/logout", function(req,res){
+  res.send("Halaman log out")
+})
 server.post("/logout/:usn", function(req,res) {
     res.status("200");
     console.log("\n\nBerhasil Log Out");
@@ -43,7 +49,10 @@ server.post("/logout/:usn", function(req,res) {
 });
 
 //fungsi3 mengubah daftar dosen yang bisa mengubah rps
-server.put("/rpsdetail", (req,res) => {
+server.get("/rpsdetail", function(req,res){
+  res.send("MANAJEMEN RPS")
+})
+server.put("/rpsdetailedit", (req,res) => {
     res.status("200");
     let detailRps = {
         "Detail_RPS" : {
@@ -57,7 +66,7 @@ server.put("/rpsdetail", (req,res) => {
       console.log("\n\nBerhasil Mengubah Dosen yang Mengajar\n");
 });
 
-//fungsi4
+//fungsi4 laporan rps
 server.get("/rpsreport", function(req,res) {
     let rpsReport = {
     "RPS" : [{
@@ -76,10 +85,11 @@ server.get("/rpsreport", function(req,res) {
     console.log("\n\nDaftar RPS");
 });
 
-//fungsi5
+//fungsi5 cetak rps
 server.get("/printrps:idrps", function(req,res) {
     res.send("Cetak RPS"+req.params.idrps+" Berhasil");
 });
+
 
 //Dean Fisabil Andwi
 //Fungsi 6 Menambah RPS
