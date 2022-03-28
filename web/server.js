@@ -81,32 +81,3 @@ server.get("/printrps:idrps", function(req,res) {
     res.send("Cetak RPS"+req.params.idrps+" Berhasil");
 });
 
-
-//Fungsi 11 : Menghapus CMPK
-server.delete("/cpmk/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus CPMK Mata Kuliah id: ${ID}')
-});
-
-//Fungsi 12 : Menambah referensi
-server.post("/referensi/", function(req ,res){
-    res.send("Berhasil menambah referensi")
-});
-
-//Fungsi 13 : Mengubah referensi
-server.put("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil mengubah referensi id: ${ID}')
-});
-
-//Fungsi 14 : Menghapus referensi
-server.delete("/referensi/:id", function(req ,res) {
-    const ID = request.params.id;
-    res.send('Berhasil menghapus referensi id: ${ID}')
-});
-
-//Fungsi 15 : Menambah komponen penilaian
-server.post("/kompnilai/", function(req ,res) {
-    res.send("Berhasil menambah komponen penilaian")
-});
-
