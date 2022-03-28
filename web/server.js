@@ -42,7 +42,7 @@ server.post("/logout/:usn", function(req,res) {
 });
 
 //fungsi3 mengubah daftar dosen yang bisa mengubah rps
-server.put("/rpslist/rpsdetail:idrps", (req,res) => {
+server.put("/rpsdetail", (req,res) => {
     res.status("200");
     let detailRps = {
         "Detail_RPS" : {
@@ -52,23 +52,28 @@ server.put("/rpslist/rpsdetail:idrps", (req,res) => {
             "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
         },
     }; 
-    const detail = JSON.parse(JSON.stringify(detailRps));
-    
-    res.send(res.json(detail));
-    console.log("\n\nDetail RPS");
+    res.json(detailRps);
+      console.log("\n\nBerhasil Mengubah Dosen yang Mengajar\n");
 });
 
 //fungsi4
 server.get("/rpslist", function(req,res) {
     let rpsList = {
-    "Detail_RPS" : {
-        "Kode_Matkul" : req.params.idrps,
+    "Daftar_RPS" : [{
+        "Kode_Matkul" : "jsi123",
         "Matkul" : "Pemograman Web",
         "SKS" : 4,
         "Dosen" : ["Husnil Kamil", "Surya Afnarius"]
-    },
-}; 
-    res.send("Daftar RPS dengan id" + req.params.idrps);
+    }, {
+        "Kode_Matkul" : "jsi345",
+        "Matkul" : "Pemograman Mobile",
+        "SKS" : 4,
+        "Dosen" : ["Husnil Kamil"]
+    }]
+};     
+    const list = JSON.parse(JSON.stringify(rpsList)); 
+    res.send(res.json(list));
+    console.log("\n\nDaftar RPS");
 });
 
 //fungsi5
