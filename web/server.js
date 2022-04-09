@@ -5,7 +5,7 @@ server.get("/", (req, res) => {
     res.send("Server is connected")
   })
   
-server.listen (3000,function(){
+server.listen (8000,function(){
     console.log("Alhamdulillah bisaa ges dah nyambung")
 })
 
