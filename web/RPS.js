@@ -98,3 +98,54 @@ sequelize.define('course_plans' ,
     }
 
 });
+
+sequelize.define('users' ,
+{
+    id:
+    {
+        type : DataTypes.BIGINT,
+        allowNull: false,
+        primaryKey : true,
+        autoIncrement: true
+    },
+    name:
+    {
+        type : DataTypes.VARCHAR,
+        allowNull: false 
+    },    
+    email:
+    {
+        type : DataTypes.VARCHAR,
+        allowNull: false 
+    },
+    email_verified_at:
+    {
+        type : DataTypes.TIMESTAMP,
+        allowNull: true 
+    },    
+    password:
+    {
+        type : DataTypes.VARCHAR,
+        allowNull: false 
+    },
+    remember_token:
+    {
+        type : DataTypes.VARCHAR,
+        allowNull: true
+    },    
+    type:
+    {
+        type : DataTypes.ENUM,
+        allowNull: false
+    },
+    created_at:
+    {
+        type : DataTypes.TIMESTAMP,
+        allowNull: true
+    },    
+    update_at:
+    {
+        type : DataTypes.TIMESTAMP,
+        allowNull: true
+    },
+});
