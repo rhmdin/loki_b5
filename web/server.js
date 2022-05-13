@@ -92,6 +92,15 @@ server.get("/printrps:idrps", function(req,res) {
 
 
 //Dean Fisabil Andwi
+//Fungsi dosen melihat RPS
+server.get("/lihatRPS", function(req,res){
+  res.send("Lihat RPS gais")
+})
+//Fungsi Lihat detail rps
+server.get("/detailRPS", function(req,res){
+  res.send("Lihat Detail RPS gais")
+})
+
 //Fungsi 6 Menambah RPS
 server.get("/tambahRPS", function(req,res){
     res.send("nambah RPS gais")
@@ -200,6 +209,10 @@ server.put("/UbahCPMK", (req, res) => {
       res.json(obj);
       console.log("\n\nBerhasil Mengubah Data CPMK\n");
 });
+
+server.get("/lihatCPMK", function(req,res){
+  res.send("Lihat CPMK per mata kuliah gais")
+})
 
 //Reysha Irsyalina
 //Fungsi 11 : Menghapus CMPK
