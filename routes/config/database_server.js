@@ -12,4 +12,5 @@ const dbconfig = new Sequelize('loki', 'root', '', {
     console.error('Unable to connect to the database:', error);
   }
 
+  
 module.exports = dbconfig;

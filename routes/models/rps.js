@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require("../config/database_server");
+
 const express = require('express');
 const server = express();
 var router = express.Router();
