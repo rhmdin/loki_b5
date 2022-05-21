@@ -174,7 +174,7 @@ server.get("/TambahCPMK", function(req,res){
 
 server.post("/TambahCPMK", (req, res) => {
     console.log("Tambah Data CPMK");
-    let obj = {
+    let tambahcpmk = {
         "message": "Capaian Pembelajaran Mata Kuliah Sudah ditambahkan",
         "Keterangan": "menambah CPMK mata kuliah",
         "Nip ": "12345678912",
@@ -185,7 +185,7 @@ server.post("/TambahCPMK", (req, res) => {
                     "2. Mahasiswa mampu menggunakan salah satu Bahasa pemrograman untuk membangun web localhost\n"],
         "Cek": "PENAMBAHAN DATA CPMK BERHASIL",
     }
-    res.json(obj);
+    res.json(tambahcpmk);
     console.log("\n\nBerhasil Menambah Data CPMK\n");
   });
 
@@ -197,7 +197,7 @@ server.get("/UbahCPMK", function(req,res){
 
 server.put("/UbahCPMK", (req, res) => {
       console.log("Mengubah Data CPMK");
-      let obj = {
+      let ubahcpmk = {
           "message": "Capaian Pembelajaran Mata Kuliah Sudah diubah",
           "Keterangan": "mengubah CPMK mata kuliah",
           "Nip ": "12345678912",
@@ -208,13 +208,30 @@ server.put("/UbahCPMK", (req, res) => {
                       "2. Mahasiswa mampu menggunakan Bahasa pemrograman Javascript untuk membangun web localhost\n"],
           "Cek": "Pengubahan DATA CPMK BERHASIL",
       }
-      res.json(obj);
+      res.json(ubahcpmk);
       console.log("\n\nBerhasil Mengubah Data CPMK\n");
 });
 
+//dosen lihat cpmk
 server.get("/lihatCPMK", function(req,res){
   res.send("Lihat CPMK per mata kuliah gais")
 })
+
+server.put("/LihatCPMK", (req, res) => {
+  console.log("Melihat Data CPMK");
+  let lihatcpmk = {
+      "message": "Capaian Pembelajaran Mata Kuliah Sudah diubah",
+      "Keterangan": "mengubah CPMK mata kuliah",
+      "Nip ": "12345678912",
+      "Nama": "Vladimir Putim M,Kom.",
+      "Matkuliah yang diampu": "Pemograman Web",
+      "Kode Matakuliah": "SIJs2102",
+      "CPMK": [   "1. Mahasiswa mampu menjelaskan konsep dasar dan komponen web basic dan juga advance\n",
+                  "2. Mahasiswa mampu menggunakan Bahasa pemrograman Javascript untuk membangun web localhost\n"],
+      "Cek": "Pengubahan DATA CPMK BERHASIL",
+  }
+  res.json(lihatcpmk);
+});
 
 //Reysha Irsyalina
 //Fungsi 11 : Menghapus CMPK
@@ -305,6 +322,21 @@ server.delete("/hapusref", (req, res) => {
   console.log("Referensi berhasil dihapus");
 });
 
+//dosen melihat referensi
+server.get("/lihatref", function(req ,res) {
+ res.send('Lihat refetensi')
+});
+let referensi = {
+  "nip ": 198201182008121002,
+  "Nama": "Husnil Kamil M.T",
+  "mata kuliah" : "Pemograman Web",
+  "kode" : "JSI62125",
+  "sks" : 3,
+  "semester" : 4,
+  "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
+}
+res.json(referensi);
+
 //Fungsi 15 : Menambah Komponen Penilaian
 server.get("/tambahkompnilai", function(req ,res) {
   res.send("Berhasil menambah komponen penilaian")
@@ -389,6 +421,16 @@ server.post("/RPS/addpertemuan", (req, res) => {
   console.log("Pertemuan mingguan berhasil ditambah");
   });
 
+//melihat komponen penilaiain
+server.get("/lihatpenilaian", function(req ,res) {
+  res.send('Lihat refetensi')
+ });
+ let peniliaian = {
+   "Mata Kuliah": "XXXXXX",
+   "Nama Dosen": "Husnil Kamil M.T",
+ }
+ res.json(peniliaian);
+
 //Fungsi 19 : Mengubah pertemuan mingguan yang ada dalam RPS
 server.get("/RPS/ubahPertemuan", function(req,res){
   res.send("Mengubah pertemuan mingguan")
@@ -433,6 +475,14 @@ server.get("/detail", function(req,res){
   res.send("Detail RPS")
 })
 
+//dosen melihat pert mingguan
+server.get("/lihatpmingguan", function(req ,res) {
+  res.send('Lihat refetensi')
+ });
+ let pertemuan_mingguan = {
+
+ }
+ res.json(pertemuan_mingguan);
 //Fungsi 23 : Ekspor RPS menjadi PDF
 server.get("/generate-pdf", function(req,res){
   res.send("Generate PDF Berhasil")
