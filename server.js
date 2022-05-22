@@ -324,18 +324,21 @@ server.delete("/hapusref", (req, res) => {
 
 //dosen melihat referensi
 server.get("/lihatref", function(req ,res) {
- res.send('Lihat refetensi')
+ res.send('Lihat referensi')
 });
-let referensi = {
-  "nip ": 198201182008121002,
-  "Nama": "Husnil Kamil M.T",
-  "mata kuliah" : "Pemograman Web",
-  "kode" : "JSI62125",
-  "sks" : 3,
-  "semester" : 4,
-  "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
-}
-res.json(referensi);
+server.put("/lihattref", (req, res) => {
+  console.log("Melihat Referensi");
+  let referensi = {
+    "nip ": 198201182008121002,
+    "Nama": "Husnil Kamil M.T",
+    "mata kuliah" : "Pemograman Web",
+    "kode" : "JSI62125",
+    "sks" : 3,
+    "semester" : 4,
+    "referensi": ["Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox"],
+  }
+  res.json(referensi);
+})
 
 //Fungsi 15 : Menambah Komponen Penilaian
 server.get("/tambahkompnilai", function(req ,res) {
@@ -423,13 +426,17 @@ server.post("/RPS/addpertemuan", (req, res) => {
 
 //melihat komponen penilaiain
 server.get("/lihatpenilaian", function(req ,res) {
-  res.send('Lihat refetensi')
+  res.send('Lihat penilaian')
  });
- let peniliaian = {
-   "Mata Kuliah": "XXXXXX",
-   "Nama Dosen": "Husnil Kamil M.T",
- }
- res.json(peniliaian);
+ server.put("/lihattref", (req, res) => {
+  console.log("Melihat Penilaian");
+  let peniliaian = {
+    "Mata Kuliah": "XXXXXX",
+    "Nama Dosen": "Husnil Kamil M.T",
+  }
+  res.json(peniliaian);
+  
+})
 
 //Fungsi 19 : Mengubah pertemuan mingguan yang ada dalam RPS
 server.get("/RPS/ubahPertemuan", function(req,res){
@@ -479,10 +486,12 @@ server.get("/detail", function(req,res){
 server.get("/lihatpmingguan", function(req ,res) {
   res.send('Lihat refetensi')
  });
- let pertemuan_mingguan = {
-
- }
- res.json(pertemuan_mingguan);
+ server.put("/lihatpmingguan", (req, res) => {
+  console.log("Melihat Pertemuan Mingguan");
+  let pertemuan_mingguan = {
+  }
+  res.json(pertemuan_mingguan);
+})
 //Fungsi 23 : Ekspor RPS menjadi PDF
 server.get("/generate-pdf", function(req,res){
   res.send("Generate PDF Berhasil")
