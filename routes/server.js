@@ -1,5 +1,8 @@
 const express = require('express');
 const server = express();
+
+const jwt = require('jsonwebtoken')
+server.use(express.json())
 var router = express.Router();
 
 
@@ -13,22 +16,32 @@ server.listen (3000,function(){
 
 //Rdina 2012
 //Fungsi 1 login
-server.get("/login", function(req,res){
+
+const post = [
+  {
+      username:'Kyle',
+      title:'Posy 1'
+  },
+  {
+      username:'Jin',
+      title:'Posy 1'
+  }
+]
+
+server.get("/post", function(req,res){
+  res.json(posts)
   res.send("Halaman log in")
 })
-server.post("/login/:usn", function(req,res) {
+
+server.post("/login", function(req,res) {
+    const username = req.body.username
+    const user = { name: username}
+    
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+    res.json({ accessToken: accessToken })
+  
     res.status("200");
     console.log("\n\nBerhasil Log In");
-    const logIn = {
-        "Akun" :  {
-            "NIP" : req.params.usn,
-            "Username" : "HusnilK",
-            "Jabatan" : "Kajur SI",
-        },
-    };
-    const akun = JSON.parse(JSON.stringify(logIn));
-    
-    res.send(res.json(akun));
 });
 
 //fungsi2 logout
@@ -496,5 +509,6 @@ server.get("/lihatpmingguan", function(req ,res) {
 server.get("/generate-pdf", function(req,res){
   res.send("Generate PDF Berhasil")
 })
+
 
 module.exports = router;
