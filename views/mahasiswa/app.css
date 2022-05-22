@@ -233,7 +233,7 @@ p.mb-1{
     }
 
     .nav_link:hover{
-        color: var(--white-color);
+        color:#6a6a6a;
         text-decoration: none;
     }
 
