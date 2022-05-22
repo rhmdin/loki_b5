@@ -3,7 +3,6 @@ const server = express();
 
 var router = express.Router();
 
-
 server.get("/", (req, res) => {
     res.send("Server is connected")
   })
