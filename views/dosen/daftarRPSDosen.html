@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  
+
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -56,78 +56,50 @@
     </div>
     
     <div>
-            <div class="row" >
-                <nav aria-label="breadcrumb" style="margin-top:75px;">
-                    <ol class="breadcrumb">
-                    <li class="me-3">
-                        <a href="" class="btn btn-sm" style="font-size: 17px;font-weight:600;color: #404444">Daftar RPS</a>
-                    </li>
-                    <li class="me-3" aria-current="page">
-                        <a href="" class="btn btn-sm" style="background-color: #353535; color: #fff; font-weight:600; font-size: 17px; border-radius: 10px;">Lihat RPS</a>
-                    </li>
-                    </ol>
-                </nav>
-            </div>
-
+        <h6 style="margin-top:60px">Daftar RPS</h6>
             <div class="row">
                 <div class="col-12" style="margin-top:70px">
                     <div class="card2 mb-4" style="border-radius: 10px;">
                         <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;">
                             <div class="container-fluid">
-                                <h5 align="center" style="margin-top:20px;margin-bottom:20px">Pemograman Web</h5>
-                                <table id="myTable" class="table table-hover" style="margin-top:20px">
+                                <p align="right"><a class='btn btn-list' href="tambahRPS.html" style="background-color: white; color:#353535; border:#353535 1px solid; margin-top:15px"> Tambah</a></p>
+                                <table id="myTable" class="table table-bordered table-hover" >
                                     <thead >
                                         <tr align="center" bgcolor='C4C4C4'>
-                                            <th>Detail RPS</th>
+                                            <th>No</th>
+                                            <th>Kode Mata Kuliah</th>
+                                            <th>Nama Mata Kuliah</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Mata Kuliah</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahMatkul.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editMatkul.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                            <th>1</th>
+                                            <th>JSI100213</th>
+                                            <th>Pemograman Web</th>
+                                            <th width="280px">
+                                                <a class='btn btn-list' href="lihatRPSDosen.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-list' href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Detail</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
                                         <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Dosen Pengampu</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahDosen.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editDosen.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                            <th>2</th>
+                                            <th>JSI100214</th>
+                                            <th>Dasar - Dasar Pemrograman</th>
+                                            <th width="280px">
+                                                <a class='btn btn-list' href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-list' href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Detail</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
                                         <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Penilaian Kognitif</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
-                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
-                                            </th>
-                                        </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Referensi</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
-                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
-                                            </th>
-                                        </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Pertemuan Mingguan</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
-                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
-                                            </th>
-                                        </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>CPMK</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                            <th>3</th>
+                                            <th>JSI100215</th>
+                                            <th>Pemograman Bergerak</th>
+                                            <th width="280px">
+                                                <a class='btn btn-list' href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-list' href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Detail</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
@@ -141,8 +113,8 @@
             </div>
     </div>
 
-    <div class="footer" style="bottom:-40px">
-        <p>Copyright &copy 2022 Aplikasi Kost. All rights reserved.</p>
+    <div class="footer" style="bottom:-150px">
+        <p>Copyright &copy 2022 Aplikasi E-RPS. All Rights Reserved.</p>
     </div>
 
     <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
