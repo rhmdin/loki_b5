@@ -1,8 +1,6 @@
 const express = require('express');
 const server = express();
 
-const jwt = require('jsonwebtoken')
-server.use(express.json())
 var router = express.Router();
 
 
@@ -15,39 +13,23 @@ server.listen (3000,function(){
 })
 
 //Rdina 2012
-//Fungsi 1 login
-
-const post = [
-  {
-      username:'Kyle',
-      title:'Posy 1'
-  },
-  {
-      username:'Jin',
-      title:'Posy 1'
-  }
-]
-
-server.get("/post", function(req,res){
-  res.json(posts)
-  res.send("Halaman log in")
-})
-
-server.post("/login", function(req,res) {
-    const username = req.body.username
-    const user = { name: username}
-    
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    res.json({ accessToken: accessToken })
-  
+//Fungsi 1
+server.post("/login/:usn", function(req,res) {
     res.status("200");
     console.log("\n\nBerhasil Log In");
+    const logIn = {
+        "Akun" :  {
+            "NIP" : req.params.usn,
+            "Username" : "HusnilK",
+            "Jabatan" : "Kajur SI",
+        },
+    };
+    const akun = JSON.parse(JSON.stringify(logIn));
+    
+    res.send(res.json(akun));
 });
 
-//fungsi2 logout
-server.get("/logout", function(req,res){
-  res.send("Halaman log out")
-})
+//fungsi2
 server.post("/logout/:usn", function(req,res) {
     res.status("200");
     console.log("\n\nBerhasil Log Out");
@@ -64,10 +46,7 @@ server.post("/logout/:usn", function(req,res) {
 });
 
 //fungsi3 mengubah daftar dosen yang bisa mengubah rps
-server.get("/rpsdetail", function(req,res){
-  res.send("MANAJEMEN RPS")
-})
-server.put("/rpsdetailedit", (req,res) => {
+server.put("/rpsdetail", (req,res) => {
     res.status("200");
     let detailRps = {
         "Detail_RPS" : {
@@ -81,7 +60,7 @@ server.put("/rpsdetailedit", (req,res) => {
       console.log("\n\nBerhasil Mengubah Dosen yang Mengajar\n");
 });
 
-//fungsi4 laporan rps
+//fungsi4
 server.get("/rpsreport", function(req,res) {
     let rpsReport = {
     "RPS" : [{
@@ -100,11 +79,10 @@ server.get("/rpsreport", function(req,res) {
     console.log("\n\nDaftar RPS");
 });
 
-//fungsi5 cetak rps
+//fungsi5
 server.get("/printrps:idrps", function(req,res) {
     res.send("Cetak RPS"+req.params.idrps+" Berhasil");
 });
-
 
 //Dean Fisabil Andwi
 //Fungsi dosen melihat RPS
