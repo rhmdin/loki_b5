@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  
+
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -33,20 +33,20 @@
                 <div class="nav_list2"> 
                 <a href="#" class="nav_logo"> 
                     <img src="http://www.clker.com/cliparts/M/o/W/d/C/j/about-icon-md.png" align="center" width="20%"><br>
-                    <span class="nav_logo-name" style="margin-left:5px">Dosen</span> 
+                    <span class="nav_logo-name" style="margin-left:5px">Admin</span> 
                 </a>
                 </div>
                 <div class="nav_list"> 
-                        <a href="berandaDosen.html" class="nav_link"> 
+                        <a  class="nav_link"> 
                             <i class='bx bx-home nav_icon'></i> 
                             <span class="nav_name">Beranda</span> 
                         </a>
-                        <a href="daftarRPSDosen.html"  class="nav_link active"> 
+                        <a  class="nav_link active"> 
                             <i class='bx bx-clipboard nav_icon'></i> 
                             <span class="nav_name">Daftar RPS</span> 
                         </a> 
                         <br><br><br>
-                        <a href="/frontend/all_user/login.html" class="nav_link" style="margin-top:260px;" href=""> 
+                        <a href="" class="nav_link" style="margin-top:260px;" href=""> 
                             <i class='bx bx-log-out nav_icon'></i> 
                             <span class="nav_name">Log Out</span> 
                         </a>
@@ -60,10 +60,10 @@
                 <nav aria-label="breadcrumb" style="margin-top:75px;">
                     <ol class="breadcrumb">
                     <li class="me-3">
-                        <a href="daftarRPSDosen.html" class="btn btn-sm" style="font-size: 17px;font-weight:600;color: #404444">Daftar RPS</a>
+                        <a href="" class="btn btn-sm" style="font-size: 17px;font-weight:600;color: #404444">Daftar RPS</a>
                     </li>
                     <li class="me-3" aria-current="page">
-                        <a href="lihatRPSDosen.html" class="btn btn-sm" style="background-color: #353535; color: #fff; font-weight:600; font-size: 17px; border-radius: 10px;">Edit RPS</a>
+                        <a href="" class="btn btn-sm" style="background-color: #353535; color: #fff; font-weight:600; font-size: 17px; border-radius: 10px;">Contributor</a>
                     </li>
                     </ol>
                 </nav>
@@ -74,43 +74,59 @@
                     <div class="card2 mb-4" style="border-radius: 10px;">
                         <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;">
                             <div class="container-fluid">
-                                <form action="" method="POST">
-                                    <div class="row">
-                                        <h5 align="center" style="margin-top:20px">Edit Data Penilaian Kognitif</h5> 
-                                        <div class="row g-3">
-                                            <div class="col-md-4">
-                                            <label for="">Tugas</label>
-                                            <input type="int" class="form-control" name="" required>
-                                            </div>
+                                <div class="row">
+                                    <nav aria-label="breadcrumb" style="margin-top:15px;">
+                                        <ol class="breadcrumb">
+                                        <li class="me-3">
+                                            <p style="margin-top:3px;">Contributor</p>
+                                        </li>
+                                        <li class="me-3" aria-current="page">
+                                            <input type="text" align="right" id="mySearch" onkeyup="myFunction()" style="margin-top:3px; padding:0px 20px;">
+                                        </li>
+                                        <li class="me-3" aria-current="page">
+                                            <a class="btn btn-list" align="left" style=" color: white; background-color:#353535; border:#353535 2px solid;" href="">Tambah</a>
+                                        </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                                <br>
+                                <table id="myTable" class="table table-bordered table-hover" >
+                                    <thead >
+                                        <tr align="center" bgcolor='C4C4C4'>
+                                            <th>No</th>
+                                            <th>Nama Dosen</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                                            <th>1</th>
+                                            <th>Husnil Kamil, M.T</th>
+                                            <th width="280px">
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                                            <th>2</th>
+                                            <th>Ricky Akbar, M.T</th>
+                                            <th width="280px">
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                                            <th>3</th>
+                                            <th>Adi Arga Arifnur, M.Kom</th>
+                                            <th width="280px">
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                                            <div class="col-md-4">
-                                            <label for="">Kuis</label>
-                                            <input type="int" class="form-control" name="" required>
-                                            </div>
+                                <div class="col-12">
+                                    <a class="btn btn-list mt-2" align="left" style=" color: white; background-color:#353535; border:#353535 2px solid;" href="">Back</a>
+                                </div>
 
-                                            <div class="col-md-4">
-                                            <label for="">Tugas Besar</label>
-                                            <input type="int" class="form-control" name="" required>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                            <label for="">UTS</label>
-                                            <input type="int" class="form-control" name="" required>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                            <label for="">UAS</label>
-                                            <input type="int" class="form-control" name="" required>
-                                            </div>
-
-                                            <div align="center" class="col-12">
-                                                <a class="btn btn-list" style="margin-left:30px; color: white; background-color:#353535; border:#353535 2px solid;" href="">Reset</a>
-                                                <a class="btn btn-list" style="margin-left:30px; color: white; background-color:#353535; border:#353535 2px solid;" href="lihatRPSDosen.html">Cancel</a>
-                                                <input class="btn btn-list" type="submit" name="simpan" value="Submit" style="margin-left:30px; color: white;background-color:#353535; border:#353535 2px solid;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
