@@ -18,7 +18,7 @@ const posts = [
     }
 ]
 
-router.get('/posts', autheticateToken, (req, res) => {
+router.get('/posts', authenticateToken, (req, res) => {
     res.json(posts.filter(post => post.username === req.user.name))
 })
 
@@ -27,10 +27,10 @@ router.post('/auth', (req, res) => {
     const username = req.body.username
     const user = { user: username }
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    res.json({ accessToken:accessToken })
+    res.json({ accessToken : accessToken })
 });
 
-function autheticateToken(req, res, next){
+function authenticateToken(req, res, next){
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null) return res.endStatus(401)
