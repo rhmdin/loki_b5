@@ -43,7 +43,7 @@ function authenticateToken(req, res, next){
 }
 
 router.get('/login', (req, res, next) => {
-    res.render('auth',{ name: '@studydocs'});
+    res.render('auth',{ name: 'KOPI'});
 });
 
 module.exports = router;
