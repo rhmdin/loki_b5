@@ -80,5 +80,8 @@ router.post('/user1/login', async (req, res) => {
         res.status(500).send()
     }
 })
+router.get('/login', (req, res, next) => {
+    res.render('auth',{ name: 'KOPI'});
+});
 
 module.exports = router;
