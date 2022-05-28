@@ -2,10 +2,30 @@ GET http://localhost:3000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTM1OTQwNjF9.ToF0s9J9A2p9MDLJ_Z2KIEf1NeDlXZ2TbokHKCYGSJ8
 
 ###
-
 POST http://localhost:3000/auth
 
 Content-Type: application/json
 {
     "username": "Rahma"
+}
+
+###
+GET http://localhost:3000/user1
+
+###
+POST http://localhost:3000/user1
+Content-Type: application/json
+
+{
+    "name": "Rahma",
+    "password": "password"
+}
+
+###
+POST http://localhost:3000/user1/login
+Content-Type: application/json
+
+{
+    "name": "Rahma",
+    "password": "password"
 }

@@ -1,9 +1,11 @@
 //rute utk otentikasi login
 require('dotenv').config()
+const { useColors } = require('debug/src/browser');
 var express = require('express');
 var router = express.Router();
-
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
+const { hash } = require('bcrypt');
 
 router.use(express.json())
 
@@ -42,8 +44,41 @@ function authenticateToken(req, res, next){
     })
 }
 
-router.get('/login', (req, res, next) => {
-    res.render('auth',{ name: '@studydocs'});
-});
+
+const users = []
+
+router.get('/user1', (req, res) => {
+    res.json(users)
+})
+
+router.post('/user1', async (req, res) => {
+    try{
+        const salt = await bcrypt.genSalt()
+        const hashedPassword = await bcrypt.hash(req.body.password, salt)
+        const user = { name: req.body.name, password: hashedPassword }
+        users.push(user)
+        res.status(201).send()
+    }
+    catch{
+        res.status(500).send()
+    }
+})
+
+router.post('/user1/login', async (req, res) => {
+    const user = users.find(user => user.name = req.body.name)
+    if(user == null){
+        return res.status(400).send('Nama pengguna tidak ditemukan')
+    }
+    try{
+        if(await bcrypt.compare(req.body.password, user.password)){
+            res.send('Log in sukses')
+        }
+        else{
+            res.send('Password salah')
+        }
+    } catch{
+        res.status(500).send()
+    }
+})
 
 module.exports = router;
