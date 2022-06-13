@@ -75,42 +75,144 @@
                         <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;">
                             <div class="container-fluid">
                                 <h5 align="center" style="margin-top:20px;margin-bottom:20px">Pemograman Web</h5>
+
+                                <a class='btn btn-list' href="tambahPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Tambah Komponen Penilaian</a>           
                                 <table id="myTable" class="table table-hover" style="margin-top:20px">
                                     <thead >
-                                        <tr align="center" bgcolor='C4C4C4'>
-                                            <th>Detail RPS</th>
-                                            <th>Action</th>
+                                        <tr bgcolor='C4C4C4'>
+                                            <th width="80%" style="padding-bottom:12px">KOMPONEN PENILAIAN</th>
+                                            <th width="20%"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Komponen Penilaian</th>
-                                            <th width="380px">
-                                                <a class='btn btn-list' href="tambahPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th width="80%" align="left" style="font-size:14px">Project</th>
+                                            <th width="20%" align="center">
                                                 <a class='btn btn-list' href="editPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Referensi</th>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Tugas</th>
                                             <th width="380px">
-                                                <a class='btn btn-list' href="tambahReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
-                                                <a class='btn btn-list' href="editReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-list' href="editPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>Pertemuan Mingguan</th>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Quiz</th>
                                             <th width="380px">
-                                                <a class='btn btn-list' href="tambahPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
+                                                <a class='btn btn-list' href="editPenilaian" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th align="left" style="font-size:14px">UTS</th>
+                                            <th width="380px">
+                                                <a class='btn btn-list' href="editPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th align="left" style="font-size:14px">UAS</th>
+                                            <th width="380px">
+                                                <a class='btn btn-list' href="editPenilaian.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <br>
+                                <a class='btn btn-list' href="tambahPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Tambah Pertemuan</a>      
+                                <table id="myTable" class="table table-hover" style="margin-top:20px">
+                                    <thead >
+                                        <tr bgcolor='C4C4C4'>
+                                            <th width="80%" style="padding-bottom:12px">PERTEMUAN MINGGUAN</th>
+                                            <th width="20%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th width="80%" align="left" style="font-size:14px">Pertemuan 1</th>
+                                            <th width="20%" align="center">
                                                 <a class='btn btn-list' href="editPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
                                         </tr>
-                                        <tr align="center" style="color:#353535; font-weight:100; width:100%;">
-                                            <th>CPMK</th>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Pertemuan 2</th>
                                             <th width="380px">
-                                                <a class='btn btn-list' href="tambahCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Create</a>
+                                                <a class='btn btn-list' href="editPertemuan.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <a class='btn btn-list' href="tambahReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Tambah Referensi</a>          
+                                <table id="myTable" class="table table-hover" style="margin-top:20px">
+                                    <thead >
+                                        <tr bgcolor='C4C4C4'>
+                                            <th width="80%" style="padding-bottom:12px">REFERENSI</th>
+                                            <th width="20%">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th width="80%" align="left" style="font-size:14px">Beginning PHP 5.3</th>
+                                            <th width="20%" align="center">
+                                                <a class='btn btn-list' href="editReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Professional Javascript for Web Developer</th>
+                                            <th width="380px">
+                                                <a class='btn btn-list' href="editReferensi.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <a class='btn btn-list' href="tambahCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Tambah CPMK</a>
+                                <table id="myTable" class="table table-hover" style="margin-top:20px">
+                                    <thead >
+                                        <tr bgcolor='C4C4C4'>
+                                            <th width="80%" style="padding-bottom:12px">CPMK</th>
+                                            <th width="20%">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th width="80%" align="left" style="font-size:14px">Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)</th>
+                                            <th width="20%" align="center">
+                                                <a class='btn btn-list' href="editCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web (CP-1, CP-2)</th>
+                                            <th width="380px">
+                                                <a class='btn btn-list' href="editCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535;width:100%;">
+                                            <th align="left" style="font-size:14px">Mahasiswa mampu menggunakan pemograman asynchronous (CP-2, CP-3)</th>
+                                            <th width="380px">
+                                                <a class='btn btn-list' href="editCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
+                                                <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
+                                            </th>
+                                        </tr>
+                                        <tr style="color:#353535; width:100%;">
+                                            <th align="left" style="font-size:14px">Mahasiswa mampu menerapkan keamanan untuk situs web (CP-2, CP-3)</th>
+                                            <th width="380px">
                                                 <a class='btn btn-list' href="editCPMK.html" style="background-color: white; color:#353535; border:#353535 1px solid;">Edit</a>
                                                 <a class='btn btn-danger' onclick="return confirm('Anda yakin menghapus data ini ?')" href="" style="background-color: white; color:#353535; border:#353535 1px solid;">Delete</a>
                                             </th>
