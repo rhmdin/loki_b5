@@ -106,7 +106,7 @@ p.mb-1{
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
     :root
-    {--header-height: 23px;
+    {--header-height: 30px;
     --nav-width: 68px;
     --first-color: #353535;
     --first-color-light: #c2c2c2;
