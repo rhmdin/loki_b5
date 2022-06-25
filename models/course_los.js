@@ -1,66 +1,78 @@
-const { Sequelize, DataTypes } = require("sequelize");
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+    // === LANGKAH 1 UBAH course_los DIBAWAH MENJADI NAMA SESUAI MODEL === 
+  class course_los extends Model {
 
-const db = require("../config/conn");
-
-const course_plan_detail_outcomes = require("./course_plan_detail_outcomes");
-const course_plans = require("./course_plans");
-const course_plan_details = require("./course_plan_details");
-
-const course_los = db.define(
-  "course_los",
-  {
-    id: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-
-    course_plan_id: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      references: {
-        model: course_plans,
-        key: "id",
-      },
-    },
-
-    type: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
-    code: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
-    name: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-
-    parent_id: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-
-    created_at: {
-      type: DataTypes.DATE,
-    },
-
-    updated_at: {
-      type: DataTypes.DATE,
-    },
-  },
-  {
-    tableName: "course_los",
-    timestamps: false,
+    static associate(models) {}
   }
-);
+//   === LANGKAH 2 UBAH NAMA course_los.INIT SESUAI NAMA MODEL ===
+  course_los.init(
+    {
 
-course_los.belongsToMany(course_plan_details, { through: course_plan_detail_outcomes, foreignKey: "course_lo_id" });
-course_plan_details.belongsToMany(course_los, { through: course_plan_detail_outcomes, foreignKey: "course_plan_detail_id" });
-course_los.hasMany(course_los, { foreignKey: "parent_id" });
+        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
+          id: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+          },
+          // foreign key
+          course_plan_id: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+            references: {
+              model: course_plans,
+              key: "id",
+            },
+          },
+      
+          type: {
+            type: DataTypes.INT,
+            allowNull: false,
+          },
+          code: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          },
+      
+          name: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+          },
+          //foreign key
+          parent_id: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+            references: {
+              model: course_los,
+              key: "id",
+            },
+          },
+      
+          created_at: {
+            type: DataTypes.DATE,
+            allowNull: true,
+          },
+          
+          updated_at: {
+            type: DataTypes.DATE,
+            allowNull: true,
+          },
+    //   === AKHIR DARI LANGKAH 3 ===
 
-module.exports = course_los;
+
+    },
+    {
+        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
+      tableName: "course_los", //EDIT HANYA INI SAJA -> LANGKAH 4
+      sequelize,
+      freezeTableName: true,
+      timestamps: true,
+      updatedAt: "updated_at",
+      createdAt: "created_at",
+    }
+  );
+//   LANGKAH 5 UBAH NAMA course_los SESUAI NAMA MODELS
+  return course_los; //EDIT HANYA INI SAJA -> LANGKAH 5
+};

@@ -1,100 +1,109 @@
-const db = require("../config/conn");
-const { Sequelize, DataTypes } = require("sequelize");
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+    // === LANGKAH 1 UBAH course_plans DIBAWAH MENJADI NAMA SESUAI MODEL === 
+  class course_plans extends Model {
 
-const courses = require("./courses");
-const lecturers = require("./lecturers");
-const course_plan_lecturers = require("./course_plan_lecturers");
-const course_los = require("./course_los");
+    static associate(models) {}
+  }
+//   === LANGKAH 2 UBAH NAMA course_plans.INIT SESUAI NAMA MODEL ===
+  course_plans.init(
+    {
 
-const course_plans = db.define(
-  "course_plans",
-  {
+        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
+      // primary key
     id: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
     },
 
+    // foreign key
     course_id: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      //   references: {
-      //     model: courses,
-      //     key: 'id'
-      //   }
+      references: {
+        model: courses,
+        key: "id",
+      },
     },
 
     rev: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.INT,
+        allowNull: false
     },
 
     code: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false
     },
 
     name: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+        type: DataTypes.TEXT,
+        allowNull: false
     },
 
     alias_name: {
-      type: DataTypes.TEXT,
+        type: DataTypes.TEXT
     },
 
     credit: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.INT,
+        allowNull: false
     },
 
     semester: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.INT,
+        allowNull: false
     },
-
+    
     description: {
-      type: DataTypes.TEXT,
+        type: DataTypes.TEXT
     },
 
     material: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
     },
 
     created_by: {
       type: DataTypes.BIGINT,
+      allowNull: true
     },
 
     validated_by: {
       type: DataTypes.BIGINT,
+      allowNull: true
     },
 
     validated_at: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.DATE,
+      allowNull: true
     },
 
     created_at: {
-      type: DataTypes.DATE,
+        type: DataTypes.DATE,
+        allowNull: true
     },
-
+    
     updated_at: {
-      type: DataTypes.DATE,
+        type: DataTypes.DATE,
+        allowNull: true
     },
-  },
+    //   === AKHIR DARI LANGKAH 3 ===
 
-  {
-    tableName: "course_plans",
-    timestamps: false,
-  }
-);
 
-course_plans.hasOne(courses);
-course_plans.belongsTo(courses, { foreignKey: "course_id" });
-
-course_plans.belongsToMany(lecturers, { through: course_plan_lecturers, foreignKey: "course_plan_id" });
-lecturers.belongsToMany(course_plans, { through: course_plan_lecturers, foreignKey: "lecturer_id" });
-
-course_plans.hasMany(course_los, { foreignKey: "course_plan_id" });
-
-module.exports = course_plans;
+    },
+    {
+        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
+      tableName: "course_plans", //EDIT HANYA INI SAJA -> LANGKAH 4
+      sequelize,
+      freezeTableName: true,
+      timestamps: true,
+      updatedAt: "updated_at",
+      createdAt: "created_at",
+    }
+  );
+//   LANGKAH 5 UBAH NAMA course_plans SESUAI NAMA MODELS
+  return course_plans; //EDIT HANYA INI SAJA -> LANGKAH 5
+};

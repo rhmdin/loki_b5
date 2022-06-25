@@ -1,61 +1,74 @@
-const db = require("../config/conn");
-const { Sequelize, DataTypes } = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+    // === LANGKAH 1 UBAH course_plan_references DIBAWAH MENJADI NAMA SESUAI MODEL === 
+  class course_plan_references extends Model {
 
-const course_plan_references = db.define(
-  "course_plan_references",
-  {
-    id: {
-      type: Sequelize.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-
-    course_plan_id: {
-      type: Sequelize.INTEGER,
-      autoIncrement: true,
-      foreignKey: true,
-    },
-
-    title: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-
-    author: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-
-    publisher: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-
-    year: {
-      type: Sequelize.DATE,
-      allowNull: false,
-    },
-
-    description: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-
-    created_at: {
-      type: Sequelize.DATE,
-      allowNull: false,
-    },
-
-    update_at: {
-      type: Sequelize.DATE,
-      allowNull: false,
-    },
-  },
-
-  {
-    tableName: "course_plan_references",
-    timestamps: false,
+    static associate(models) {}
   }
-);
+//   === LANGKAH 2 UBAH NAMA course_plan_references.INIT SESUAI NAMA MODEL ===
+  course_plan_references.init(
+    {
 
-module.exports = course_plan_references;
+        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
+       // primary key
+    id: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      // foreign key
+      course_plan_id: {
+        type: DataTypes.BIGINT,
+        allowNull: false,
+        references: {
+          model: course_plans,
+          key: "id",
+        },
+      },
+      title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      author: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      publisher: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      year: {
+          type: DataTypes.INT,
+          allowNull: false,
+      },
+      description: {
+          type: DataTypes.TEXT,
+          allowNull: false,
+      },
+      created_at: {
+          type: DataTypes.DATE,
+          allowNull: true
+      },
+      updated_at: {
+          type: DataTypes.DATE,
+          allowNull: true
+      },
+    //   === AKHIR DARI LANGKAH 3 ===
+
+
+    },
+    {
+        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
+      tableName: "course_plan_references", //EDIT HANYA INI SAJA -> LANGKAH 4
+      sequelize,
+      freezeTableName: true,
+      timestamps: true,
+      updatedAt: "updated_at",
+      createdAt: "created_at",
+    }
+  );
+//   LANGKAH 5 UBAH NAMA course_plan_references SESUAI NAMA MODELS
+  return course_plan_references; //EDIT HANYA INI SAJA -> LANGKAH 5
+};
