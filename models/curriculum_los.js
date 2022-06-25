@@ -1,76 +1,46 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    // === LANGKAH 1 UBAH curriculum_los DIBAWAH MENJADI NAMA SESUAI MODEL === 
-  class curriculum_los extends Model {
+//CPL
+const { Sequelize, DataTypes, err } = require('sequelize');
+const db = require('../config/database.js')
 
-    static associate(models) {}
-  }
-//   === LANGKAH 2 UBAH NAMA curriculum_los.INIT SESUAI NAMA MODEL ===
-  curriculum_los.init(
-    {
-
-        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
-       // primary key
-    id: {
-        type: DataTypes.BIGINT,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-      },
-  
-      // foreign key
-      curriculum_id: {
-        type: DataTypes.BIGINT,
-        allowNull: false,
-        references: {
-          model: curricula,
-          key: "id",
-        },
-      },
-  
-      code: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-  
-      name: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-  
-      type: {
-        type: DataTypes.INT,
-        allowNull: false,
-      },
-  
-      description: {
-        type: DataTypes.TEXT,
-      },
-  
-      created_at: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
-  
-      updated_at: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
-    //   === AKHIR DARI LANGKAH 3 ===
-
-
+var curriculum_los = db.define('curriculum_los', {
+    id : {
+        type : DataTypes.BIGINT,
+        allownull : false,
+        primaryKey : true,
+        autoIncrement : true
     },
-    {
-        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
-      tableName: "curriculum_los", //EDIT HANYA INI SAJA -> LANGKAH 4
-      sequelize,
-      freezeTableName: true,
-      timestamps: true,
-      updatedAt: "updated_at",
-      createdAt: "created_at",
-    }
-  );
-//   LANGKAH 5 UBAH NAMA curriculum_los SESUAI NAMA MODELS
-  return curriculum_los; //EDIT HANYA INI SAJA -> LANGKAH 5
-};
+
+    curriculum_id : {
+        type : DataTypes.BIGINT,
+        allownull : false
+    },
+
+    code : {
+        type : DataTypes.STRING,
+        allownull : false
+    },
+
+    name : {
+        type : DataTypes.TEXT,
+        allownull : false
+    },
+
+    type : {
+        type : DataTypes.INTEGER,
+        allownull : false
+    },
+
+    description : {
+        type : DataTypes.TEXT,
+        allownull : true
+    },
+    // created_at :Sequelize.DATE,
+    // updated_at : Sequelize.DATE
+},{
+    freezeTableName : true,
+    timestamps      : false
+})
+
+// user.removeAttribute('updatedAt', 'createdAt')
+module.exports = curriculum_los
+

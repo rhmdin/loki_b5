@@ -1,78 +1,38 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    // === LANGKAH 1 UBAH course_los DIBAWAH MENJADI NAMA SESUAI MODEL === 
-  class course_los extends Model {
+//CPL
+'use strict'
+const { Sequelize, DataTypes, err } = require('sequelize');
+const db = require('../config/database.js')
 
-    static associate(models) {}
-  }
-//   === LANGKAH 2 UBAH NAMA course_los.INIT SESUAI NAMA MODEL ===
-  course_los.init(
-    {
-
-        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
-          id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true,
-          },
-          // foreign key
-          course_plan_id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
-            references: {
-              model: course_plans,
-              key: "id",
-            },
-          },
-      
-          type: {
-            type: DataTypes.INT,
-            allowNull: false,
-          },
-          code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          },
-      
-          name: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-          },
-          //foreign key
-          parent_id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
-            references: {
-              model: course_los,
-              key: "id",
-            },
-          },
-      
-          created_at: {
-            type: DataTypes.DATE,
-            allowNull: true,
-          },
-          
-          updated_at: {
-            type: DataTypes.DATE,
-            allowNull: true,
-          },
-    //   === AKHIR DARI LANGKAH 3 ===
-
-
+var course_los = db.define ('course_los', {
+    id : {
+        type        : DataTypes.BIGINT,
+        allownull   : false,
+        primaryKey  : true,
+        autoIncrement   : true
     },
-    {
-        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
-      tableName: "course_los", //EDIT HANYA INI SAJA -> LANGKAH 4
-      sequelize,
-      freezeTableName: true,
-      timestamps: true,
-      updatedAt: "updated_at",
-      createdAt: "created_at",
+    course_plan_id : {
+        type        : DataTypes.BIGINT,
+        allownull   : false
+    },
+    type : {
+        type : DataTypes.INTEGER,
+        allownull : false
+    },
+    code : {
+        type : DataTypes.STRING,
+        allownull : false
+    },
+    name : {
+        type : DataTypes.TEXT,
+        allownull : false
+    },
+    parent_id : {
+        type : DataTypes.BIGINT,
+        allownull : false
     }
-  );
-//   LANGKAH 5 UBAH NAMA course_los SESUAI NAMA MODELS
-  return course_los; //EDIT HANYA INI SAJA -> LANGKAH 5
-};
+},{
+    freezeTableName : true,
+    timestamps      : false
+})
+
+module.exports = course_los

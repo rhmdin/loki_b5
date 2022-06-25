@@ -1,109 +1,59 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    // === LANGKAH 1 UBAH course_plans DIBAWAH MENJADI NAMA SESUAI MODEL === 
-  class course_plans extends Model {
-
-    static associate(models) {}
-  }
-//   === LANGKAH 2 UBAH NAMA course_plans.INIT SESUAI NAMA MODEL ===
-  course_plans.init(
-    {
-
-        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
-      // primary key
-    id: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
+//RPS
+'use strict'
+const { Sequelize, DataTypes, err } = require('sequelize');
+const db = require('../config/database.js')
+var course_plans = db.define('course_plans', {
+    id : {
+        type            : DataTypes.BIGINT,
+        allowNull       : false,
+        primaryKey      : true,
+        autoIncrement   : true
     },
-
-    // foreign key
-    course_id: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-      references: {
-        model: courses,
-        key: "id",
-      },
+    course_id :  {
+        type        : DataTypes.BIGINT,
+        allowNull   : false,
     },
-
-    rev: {
-        type: DataTypes.INT,
-        allowNull: false
+    rev : {
+        type        : DataTypes.INTEGER,
+        allowNull   : false
     },
-
-    code: {
-        type: DataTypes.STRING,
-        allowNull: false
+    code : {
+        type        : DataTypes.INTEGER,
+        allowNull   : false
     },
-
-    name: {
-        type: DataTypes.TEXT,
-        allowNull: false
+    name : {
+        type    : DataTypes.TEXT,
+        allowNull   : false
     },
-
-    alias_name: {
-        type: DataTypes.TEXT
+    alias_name : {
+        type        : DataTypes.TEXT,
+        allowNull   : true
     },
-
-    credit: {
-        type: DataTypes.INT,
-        allowNull: false
+    credit : {
+        type        : DataTypes.INTEGER,
+        allowNull   : false
     },
-
-    semester: {
-        type: DataTypes.INT,
-        allowNull: false
+    semester : {
+        type        : DataTypes.INTEGER,
+        allowNull   : false
     },
+    description : {
+        type        : DataTypes.TEXT,
+        allowNull   : true
+    },
+    material : {
+        type        : DataTypes.TEXT,
+        allowNull   : true
+    },
+    created_by      : Sequelize.BIGINT,
+    validated_by    : Sequelize.BIGINT
     
-    description: {
-        type: DataTypes.TEXT
-    },
+    // created_at :Sequelize.DATE,
+    // updated_at : Sequelize.DATE
+},{
+    freezeTableName : true,
+    timestamps      : false
+})
 
-    material: {
-      type: DataTypes.TEXT
-    },
-
-    created_by: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-
-    validated_by: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-    },
-
-    validated_at: {
-      type: DataTypes.DATE,
-      allowNull: true
-    },
-
-    created_at: {
-        type: DataTypes.DATE,
-        allowNull: true
-    },
-    
-    updated_at: {
-        type: DataTypes.DATE,
-        allowNull: true
-    },
-    //   === AKHIR DARI LANGKAH 3 ===
-
-
-    },
-    {
-        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
-      tableName: "course_plans", //EDIT HANYA INI SAJA -> LANGKAH 4
-      sequelize,
-      freezeTableName: true,
-      timestamps: true,
-      updatedAt: "updated_at",
-      createdAt: "created_at",
-    }
-  );
-//   LANGKAH 5 UBAH NAMA course_plans SESUAI NAMA MODELS
-  return course_plans; //EDIT HANYA INI SAJA -> LANGKAH 5
-};
+// user.removeAttribute('updatedAt', 'createdAt')
+module.exports = course_plans

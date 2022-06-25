@@ -1,70 +1,36 @@
-"use strict";
-const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
-    // === LANGKAH 1 UBAH course_requirements DIBAWAH MENJADI NAMA SESUAI MODEL === 
-  class course_requirements extends Model {
+//mata kuliah prasyarat
+const { Sequelize, DataTypes, err } = require('sequelize');
+const db = require('../config/database.js')
 
-    static associate(models) {}
-  }
-//   === LANGKAH 2 UBAH NAMA course_requirements.INIT SESUAI NAMA MODEL ===
-  course_requirements.init(
-    {
-
-        // === LANGKAH 3 UBAH DIBAWAH INI SESUAI YANG UDAH DIBUAT SEBELUMNYA ===
-      // primary key
-    id: {
-        type: DataTypes.BIGINT,
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-      },
-      // foreign key
-      course_id: {
-        type: DataTypes.BIGINT,
-        allowNull: false,
-        references: {
-          model: courses,
-          key: "id",
-        },
-      },
-      // foreign key
-      required_course_id: {
-          type: DataTypes.BIGINT,
-          allowNull: false,
-          references: {
-              model: courses,
-              key: "id",
-        },
-      },
-  
-      required_level: {
-          type: DataTypes.INT,
-          allowNull : false
-      },
-  
-      created_at: {
-          type: DataTypes.DATE,
-          allowNull : true
-      },
-  
-      updated_at: {
-          type: DataTypes.DATE,
-          allowNull : true
-      },
-    //   === AKHIR DARI LANGKAH 3 ===
-
-
+var course_requirements = db.define('course_requirements', {
+    id : {
+        type : DataTypes.BIGINT,
+        allownull : false,
+        primaryKey : true,
+        autoIncrement : true
     },
-    {
-        // LANGKAH 4 UBAH NAMA TABLE NAME SESUAI NAMA MODELS
-      tableName: "course_requirements", //EDIT HANYA INI SAJA -> LANGKAH 4
-      sequelize,
-      freezeTableName: true,
-      timestamps: true,
-      updatedAt: "updated_at",
-      createdAt: "created_at",
-    }
-  );
-//   LANGKAH 5 UBAH NAMA course_requirements SESUAI NAMA MODELS
-  return course_requirements; //EDIT HANYA INI SAJA -> LANGKAH 5
-};
+
+    course_id : {
+        type : DataTypes.BIGINT,
+        allownull : false
+    },
+
+    required_course_id : {
+        type : DataTypes.BIGINT,
+        allownull : false
+    },
+
+    required_level : {
+        type : DataTypes.INTEGER,
+        allownull : false
+    },
+    // created_at :Sequelize.DAT    E,
+    // updated_at : Sequelize.DATE
+},{
+    freezeTableName : true,
+    timestamps      : false
+})
+
+// user.removeAttribute('updatedAt', 'createdAt')
+module.exports = course_requirements
+
