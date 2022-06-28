@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { allcpmk,berandaRPS,cpmkForm, cpmkSave, cpmkEdit,cpmkUpdate, cpmkDelete} = require('../controler/cpmkControler');
+const { beranda,berandaRPS,cpmkForm, cpmkSave, cpmkEdit,cpmkUpdate, cpmkDelete} = require('../controler/cpmkControler');
 
 
-router.get('/', allcpmk);
+router.get('/', beranda);
 router.get('/lihatRPS', berandaRPS)
 router.get('/createCPMK', cpmkForm)
 router.post('/createCPMK', cpmkSave)

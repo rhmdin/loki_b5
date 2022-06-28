@@ -1,8 +1,8 @@
 const { raw } = require('express');
 const cpmk = require('../models/cpmk');
 
-const allcpmk = async (req,res)=>{
-    await res.render('home');
+const beranda= async (req,res)=>{
+    await res.render('beranda');
     }
 
 const berandaRPS = async (req,res)=>{
@@ -60,5 +60,5 @@ res.redirect('/lihatRPS')
 
 
 module.exports = {
-    allcpmk,berandaRPS,cpmkForm,cpmkSave, cpmkEdit, cpmkUpdate, cpmkDelete
+        beranda,berandaRPS,cpmkForm,cpmkSave, cpmkEdit, cpmkUpdate, cpmkDelete
     }
