@@ -1,8 +1,4 @@
 const { raw } = require('express');
-
-
-
-
 module.exports = {
 
 //   tambahMatkul : async function(req, res){
@@ -48,8 +44,8 @@ module.exports = {
     },
     
     RPSAdmin: (req, res) => {
-      const kurikulum = await model.curricula.findAll({attributes: ['id', 'name']});
-      const matkul = await model.courses.findAll();
+    //   const kurikulum = await model.curricula.findAll({attributes: ['id', 'name']});
+    //   const matkul = await model.courses.findAll();
       res.render("admin/daftarRPSAdmin");
     },
 

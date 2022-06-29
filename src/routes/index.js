@@ -1,8 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { beranda,login } = require('../controler/mhsControler');
 const { berandaD,daftarRPSDosen,cpmkD,tnilai,penilaianSave,tpert,pertemuanSave,tref,referensiSave, tcpmk, cpmkSave, cpmkE} = require('../controler/dosenControler');
+const { BerandaAdmin,RPSAdmin, petaCPMK, laporanRPS, persentaseRPS, tambahDosen } = require('../controler/adminController');
+const { berandaMHS, viewRPS, cariRPS} = require('../controler/mhsControler');
 
+
+router.get('/', berandaMHS);
+router.get('/lihatRPS', viewRPS)
+router.get('/cariRPS', cariRPS)
+router.get('/berandaAdmin', BerandaAdmin)
+router.get('/DaftarRPS', RPSAdmin)
+router.get('/petaCPMK', petaCPMK)
+router.get('/laporanRPS', laporanRPS)
+router.get('/persentase', persentaseRPS)
+router.get('/tambahcontributor', tambahDosen)
 router.get('/berandaDosen', berandaD)
 router.get('/daftarRPSDosen', daftarRPSDosen)
 router.get('/lihatRPSDosen', cpmkD)
@@ -16,9 +27,6 @@ router.get('/tambahCPMK', tcpmk)
 router.post('/tambahCPMK', cpmkSave)
 router.get('/editCPMK/:course_plan_detail_id', cpmkE)
 
-
-router.get('/', beranda)
-router.get('/login',login)
 
 
 // router.get('/createCPMK', cpmkForm)

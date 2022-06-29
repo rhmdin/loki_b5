@@ -6,7 +6,7 @@ const router = require ('./src/routes/index');
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'))
-app.set('view engine', '.hbs');
+app.set('view engine', '.ejs');
 app.use('/', router);
 
 app.listen(port,()=>{
