@@ -4,7 +4,7 @@ const cors = require('cors');
 const exphbs = require('express-handlebars')
 const port = process.env.PORT|| 5000;
 const router = require ('./src/routes/index');
-const routerlogin = require("./src/routes/login.js");
+//const routerlogin = require("./src/routes/login.js");
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'))
