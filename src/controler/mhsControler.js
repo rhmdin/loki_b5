@@ -1,14 +1,15 @@
 const { raw } = require('express');
-const cpmk = require('../models/cpmk');
 
-const beranda = async (req,res)=>{
-    await res.render('mahasiswa/beranda');
-    }
-
-const login= async (req,res)=>{
-    await res.render('login')
-}
 
 module.exports = {
-    beranda,login
-}
+  
+    berandaMHS: (req, res) => {
+      res.render("mahasiswa/beranda");
+    },
+    cariRPS: (req, res) => {
+      res.render("mahasiswa/cariRPS");
+    },
+    viewRPS: (req, res) => {
+      res.render("mahasiswa/rps");
+    }
+  };
