@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const { berandaD,daftarRPSDosen,cpmkD,tnilai,penilaianSave,tpert,pertemuanSave,tref,referensiSave, tcpmk, cpmkSave, cpmkE} = require('../controler/dosenControler');
 const { BerandaAdmin,RPSAdmin, petaCPMK, laporanRPS, persentaseRPS, tambahDosen } = require('../controler/adminController');
-const { berandaMHS, viewRPS, cariRPS} = require('../controler/mhsControler');
+const { berandaMHS, viewRPS, cariRPS, login} = require('../controler/mhsControler');
 
 
 router.get('/', berandaMHS);
+router.get('/login', login);
 router.get('/lihatRPS', viewRPS)
 router.get('/cariRPS', cariRPS)
 router.get('/berandaAdmin', BerandaAdmin)

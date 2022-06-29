@@ -11,5 +11,8 @@ module.exports = {
     },
     viewRPS: (req, res) => {
       res.render("mahasiswa/rps");
-    }
+    },
+    login: (req, res) => {
+        res.render("login");
+      }
   };

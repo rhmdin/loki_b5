@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi E-RPS</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <!-- data tabel CSS -->
+    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+            <!-- data tabel CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-chosen.css">
+</head>
+
+<body id="body-pd" style="background-color: #EFEAD8;">
+    <header class="header" id="header" style="background-color: white">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> 
+        </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar" >
+        <nav class="nav">
+            <div> 
+                <div class="nav_list2"> 
+                <a href="/berandaAdmin" class="nav_logo"> 
+                    <img src="http://www.clker.com/cliparts/M/o/W/d/C/j/about-icon-md.png" align="center" width="20%"><br>
+                    <span class="nav_logo-name" style="margin-left:5px">Admin</span> 
+                </a>
+                </div>
+                <div class="nav_list"> 
+                        <a href="/berandaAdmin" class="nav_link"> 
+                            <i class='bx bx-home nav_icon'></i> 
+                            <span class="nav_name">Beranda</span> 
+                        </a>
+                        <a href="/DaftarRPS" class="nav_link active"> 
+                            <i class='bx bx-clipboard nav_icon'></i> 
+                            <span class="nav_name">Daftar RPS</span> 
+                        </a> 
+                        <br><br><br>
+                        <a href="/views/login.html" class="nav_link" style="margin-top:260px;" href=""> 
+                            <i class='bx bx-log-out nav_icon'></i> 
+                            <span class="nav_name">Log Out</span> 
+                        </a>
+                </div>
+            </div> 
+        </nav>
+    </div>
+    
+    <div>
+            <div class="row" >
+                <nav aria-label="breadcrumb" style="margin-top:75px;">
+                    <ol class="breadcrumb">
+                    <li class="me-3">
+                        <a href="/DaftarRPS" class="btn btn-sm" style="font-size: 17px;font-weight:600;color: #404444">Daftar RPS</a>
+                    </li>
+                    <li class="me-3" aria-current="page">
+                        <a href="/persentase" class="btn btn-sm" style="background-color: #353535; color: #fff; font-weight:600; font-size: 17px; border-radius: 10px;">Persentase RPS</a>
+                    </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="margin-top:5px">
+                    <div class="card mb-4" style="border-radius: 10px; width:98%; margin-top:5px">
+                        <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;" align="center" >
+                            <img class="img" style="width:8%; margin:30px 30px;" src="https://lp3m.unand.ac.id/seminar/tsadmin/todakimage/logo.png"/>
+                            <h3>PERSENTASE MATA KULIAH</h3>
+                            <br>
+                            <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+                                <col class="col0">
+                                <col class="col1">
+                                <col class="col2">
+                                <col class="col3">
+                                <col class="col4">
+                                <col class="col5">
+                                <col class="col6">
+                                <col class="col7">
+                                <col class="col8">
+                                <col class="col9">
+                                <col class="col10">
+                                <col class="col11">
+                                <col class="col12">
+                                <tr class="row0">
+                                    <td class="column0 style151 s style153" rowspan="4">
+                                        <img class="img" style="width:50%; margin:30px 0px;" src="https://lp3m.unand.ac.id/seminar/tsadmin/todakimage/logo.png"/>
+                                    </td>
+                                    <td class="column1 style6 s style7" colspan="12">RENCANA PEMBELAJARAN SEMESTER (RPS)</td>
+                                  </tr>
+                                  <tr class="row1">
+                                    <td class="column1 style8 s style9" colspan="12">PROGRAM STUDI : Sistem Informasi</td>
+                                  </tr>
+                                  <tr class="row2">
+                                    <td class="column1 style8 s style9" colspan="12">FAKULTAS /PPs: Teknologi Informasi</td>
+                                  </tr>
+                                  <tr class="row3">
+                                    <td class="column1 style11 s style12" colspan="12">UNIVERSITAS ANDALAS</td>
+                                  </tr>
+                                  <tr class="row4">
+                                    <td class="column0 style148 s style150" colspan="14">PERSENTASE MATA KULIAH</td>
+                                  </tr>
+                                  <tr class="row5">
+                                    <td class="column0 style6 style59" colspan="14">Project Based Learning :</td>
+                                  </tr>
+                                  <tr class="row6">
+                                    <td class="column0 style6 s style59" colspan="14">Case Based Method :</td>
+                                  </tr>
+                                  
+                            </table>
+                            <div class="col-12">
+                                <a class="btn btn-list mt-4" align="left" style=" color: white; background-color:#353535; border:#353535 2px solid;" href="/DaftarRPS">Back</a>
+                                <a class="btn btn-list mt-4" align="right" style="margin-left:30px; color: white; background-color:#353535; border:#353535 2px solid;" href="">Cetak</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="footer" style="bottom:-50px">
+        <p>Copyright &copy 2022 Aplikasi E-RPS. All Rights Reserved.</p>
+    </div>
+
+    <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/chosenjquery.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        } );
+    </script>
+    <script>
+      $(function() {
+        $('.chosen-select').chosen();
+      });
+</script>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+        const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId),
+        bodypd = document.getElementById(bodyId),
+        headerpd = document.getElementById(headerId)
+        
+        // Validate that all variables exist
+        if(toggle && nav && bodypd && headerpd){
+        toggle.addEventListener('click', ()=>{
+        // show navbar
+        nav.classList.toggle('show')
+        // change icon
+        toggle.classList.toggle('bx-x')
+        // add padding to body
+        bodypd.classList.toggle('body-pd')
+        // add padding to header
+        headerpd.classList.toggle('body-pd')
+        })
+        }
+        }
+        
+        showNavbar('header-toggle','nav-bar','body-pd','header')
+        
+        /*===== LINK ACTIVE =====*/
+        const linkColor = document.querySelectorAll('.nav_link')
+        
+        function colorLink(){
+        if(linkColor){
+        linkColor.forEach(l=> l.classList.remove('active'))
+        this.classList.add('active')
+        }
+        }
+        linkColor.forEach(l=> l.addEventListener('click', colorLink))
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#tabel-data').DataTable();
+        });
+    </script>    
